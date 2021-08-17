@@ -39,8 +39,24 @@ const deleteInstructors = async (req, res) => {
     }
 }
 
+//Update a instructor
+const updateInstructor = async (req, res) => {
+    if (req.params && req.params.id) {
+        await Instructor.findByIdAndUpdate(req.params.id, {
+            $set: req.body
+        })
+            .then(response => {
+                res.status(200).send({ data: response });
+            })
+            .catch(error => {
+                res.status(500).send({ error: error.message });
+            });
+    }
+}
+
 module.exports = {
     createInstructor,
     getAllInstructors,
-    deleteInstructors
+    deleteInstructors,
+    updateInstructor
 }

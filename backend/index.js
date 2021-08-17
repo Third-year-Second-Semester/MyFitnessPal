@@ -3,6 +3,7 @@ let app = express();
 let mongoose = require("mongoose");
 const cors = require("cors");
 const router = require("./router/router");
+const instructorRoute = require("./router/instructor.router");
 require("dotenv").config();
 //let port = 8081
 
@@ -31,6 +32,7 @@ if (!db) {
 }
 
 app.use("/api",router)
+app.use("/instructor",instructorRoute())
 
 app.listen(process.env.PORT, () => {
   console.log("Backend Started " + process.env.PORT);

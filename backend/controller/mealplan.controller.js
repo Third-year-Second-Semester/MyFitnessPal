@@ -28,8 +28,51 @@ const getAllMealPlans =  async function(rea,res){
     }
 }
 
+
+const getMealPlanById =  async function(req,res){
+
+    try{
+        let results =  await  MealPlanModel.findById(req.params.id)
+        res.status(200).send(results)
+    }catch (err) {
+        res.status(500).send({error:err.message})
+    }
+}
+
+const deleteMealPlanById = async function(req,res){
+
+    try{
+        let result = await  MealPlanModel.deleteOne({_id:req.params.id})
+        res.status(200).send(result)
+    }catch (err){
+        res.status(500).send(err.message);
+    }
+
+}
+
+const updateMealPlanById = async function(req,res){
+    try{
+        let meal = await MealPlanModel.findById(req.params.id)
+        meal.title = req.body.title
+        meal.totCal =  req.body.totCal
+        meal.category = req.body.category
+        meal.meals = req.body.meals
+        meal.updatedate = Date.now()
+
+        const result = await meal.save();
+        res.status(200).send(result)
+
+
+
+    }catch (err){
+        res.status(500).send(err.message)
+    }
+
+}
 module.exports={
     createMealPlan,
-    getAllMealPlans
+    getAllMealPlans,
+    getMealPlanById,
+    deleteMealPlanById,
+    updateMealPlanById
 }
-//das

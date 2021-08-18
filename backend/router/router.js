@@ -1,5 +1,6 @@
 let router = require ('express').Router()
 let mealPlanController =  require('../controller/mealplan.controller')
+let blogpostController = require("../controller/blogpost.controller");
 
 
 
@@ -20,6 +21,17 @@ router.route("/mealplans/:id").get(mealPlanController.getMealPlanById)
 router.route("/mealplans/:id").delete(mealPlanController.deleteMealPlanById)
 router.route("/mealplans/:id").put(mealPlanController.updateMealPlanById)
 
+
+
+/*
+blogpost routes
+*/
+
+router.route("/blogposts/create").post(blogpostController.createBlogPost)
+router.route("/blogposts/update/:id").put(blogpostController.updateBlogPost)
+router.route("/blogposts/delete/:id").delete(blogpostController.deleteBlogPost)
+router.route("/blogposts/:id").get(blogpostController.getaBlogPost)
+router.route("/blogposts").get(blogpostController.getAllBlogPostsDetails)
 
 
 module.exports = router

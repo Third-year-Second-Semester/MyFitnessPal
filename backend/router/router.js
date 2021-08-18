@@ -17,6 +17,11 @@ router.get("/",(req,res)=>{
 
 router.route("/mealplans").post(mealPlanController.createMealPlan)
 router.route("/mealplans").get(mealPlanController.getAllMealPlans)
+router.route("/mealplans/:id").get(mealPlanController.getMealPlanById)
+router.route("/mealplans/:id").delete(mealPlanController.deleteMealPlanById)
+router.route("/mealplans/:id").put(mealPlanController.updateMealPlanById)
+
+
 
 /*
 blogpost routes

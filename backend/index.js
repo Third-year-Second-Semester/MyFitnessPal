@@ -3,11 +3,8 @@ let app = express();
 let mongoose = require("mongoose");
 const cors = require("cors");
 const router = require("./router/router");
+const instructorRoute = require("./router/instructor.router");
 require("dotenv").config();
-//let port = 8081
-//const processenv = require('./')
-
-console.log(process.env.PORT);
 
 app.get("/", (req, res) => {
   res.send("Home Route");
@@ -34,9 +31,8 @@ if (!db) {
 }
 
 app.use("/api",router)
+app.use("/instructor",instructorRoute())
 
 app.listen(process.env.PORT, () => {
   console.log("Backend Started " + process.env.PORT);
 });
-//ln
-//ads

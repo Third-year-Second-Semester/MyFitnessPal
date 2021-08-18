@@ -1,0 +1,30 @@
+.cusLink{
+    border: solid white 2px ;
+    border-radius: 12px;
+    margin-left: 30px;
+    padding:5px;
+    width: 170px;
+    text-align: center;
+    color: white;
+}
+.cusLink a{
+
+    text-decoration: none;
+    width: 100px;
+    color: white;
+    font-size: large;
+
+
+}
+.cusLink:hover {
+    background-color: white;
+    color: black;
+
+}
+.cusLink:hover a{
+    color: black;
+
+}
+
+
+

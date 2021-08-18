@@ -5,6 +5,9 @@ const cors = require("cors");
 const router = require("./router/router");
 require("dotenv").config();
 //let port = 8081
+//const processenv = require('./')
+
+console.log(process.env.PORT);
 
 app.get("/", (req, res) => {
   res.send("Home Route");

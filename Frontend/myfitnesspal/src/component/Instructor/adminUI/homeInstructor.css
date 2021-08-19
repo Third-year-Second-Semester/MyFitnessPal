@@ -1,0 +1,43 @@
+.homebackStyle
+{
+	text-align: center;
+}
+
+.addBut
+{
+	width:220px;
+	padding:12px;
+	border-radius:5px;
+	outline: 10px;
+	background-color:#00be0a;
+	border:1px solid rgb(223, 238, 14);
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+.addBut:hover
+{
+	background-color:#0e9e0e;
+	width:220px;
+}
+
+.repBut
+{
+	width:250px;
+	padding:12px;
+    margin-left: 50px;
+	border-radius:5px;
+	outline: 10px;
+	background-color:#f38404;
+	border:1px solid rgb(207, 32, 8);
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+.repBut:hover
+{
+	background-color:#ce580a;
+	width:250px;
+}

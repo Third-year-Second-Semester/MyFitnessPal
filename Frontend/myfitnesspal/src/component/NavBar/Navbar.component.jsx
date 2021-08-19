@@ -22,7 +22,7 @@ export default function NavBar(){
                         <SingleLink name="Meal Plan" link="/adminmeals"/>
                     </li>
                     <li className="nav-item">
-                        <SingleLink name="Instructors" link="/instructor/add"/>
+                        <SingleLink name="Instructors" link="/instructor"/>
                     </li>
                     <li className="nav-item">
                         <SingleLink name="Blogs"/>

@@ -10,13 +10,14 @@ const initialState = {
     category: "",
     introduction: "",
     discription: "",
-    image: "url"
+    image: ""
 }
 
 class addInstructor extends Component {
     constructor(prop) {
         super(prop);
         this.onChange = this.onChange.bind(this);
+        this.handlePhoto = this.handlePhoto.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.state = initialState
     }
@@ -26,18 +27,29 @@ class addInstructor extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    handlePhoto = (e) => {
+        this.setState({ image: e.target.files[0]});
+    }
+
     onSubmit(e) {
         e.preventDefault();
-        let instructor = {
+        const formData = new FormData();
+        formData.append('name',this.state.name);
+        formData.append('email',this.state.email);
+        formData.append('category',this.state.category);
+        formData.append('introduction',this.state.introduction);
+        formData.append('discription',this.state.discription);
+        formData.append('image',this.state.image);
+        /*let instructor = {
             name: this.state.name,
             email: this.state.email,
             category: this.state.category,
             introduction: this.state.introduction,
             discription: this.state.discription,
             image: this.state.image
-        }
-        console.log(instructor);
-        axios.post('http://localhost:8081/instructor/create', instructor)
+        }*/
+      //  console.log(this.state.name);
+        axios.post('http://localhost:8081/instructor/create', formData)
             .then(response => {
                 alert('Data Succesfullt inserted');
             })
@@ -106,6 +118,8 @@ class addInstructor extends Component {
                                 accept=".jpg,.png,.jpeg"
                                 name="image"
                                 id="imgButTab"
+                                
+                                onChange={this.handlePhoto}
 
                             />
 

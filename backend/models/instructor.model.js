@@ -6,7 +6,7 @@ const InstructorSchema = new mongoose.Schema({
     category:{type:String, required:true,trim:true},
     introduction:{type:String, required:true,trim:true},
     discription:{type:String, required:true,trim:true},
-    image:{type:String, required:true}
+    image:{type:String}
     });
 
 const instructors = mongoose.model('Instructors',InstructorSchema);

@@ -62,6 +62,10 @@ class HomeInstructor extends Component {
             <div className="clearfix">
                 <NavBar></NavBar>
                 <br></br>
+                
+                <h1 className="pagetitle">Manage Instructors</h1>
+                
+                <br></br>
                 <div className='homebackStyle'>
                     <Link to="/instructor/add">
                         <button className="addBut">+ Add New Instructor</button>

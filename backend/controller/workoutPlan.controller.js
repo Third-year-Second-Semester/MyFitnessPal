@@ -13,3 +13,24 @@ const createWorkOutPlan = async function(req,res){
         }
     }
 }
+
+//update a workout plan
+const updateWorkOutPlan = async (req, res) => {
+    if (req.params && req.params.id) {
+      await WorkOutPlanModel.findByIdAndUpdate(
+        req.params.id,
+        { $set: req.body }
+      )
+        .then((response) => {
+          res.status(200).send({ data: response });
+        })
+        .catch((error) => {
+          res.status(500).send({ error: error.message });
+        });
+    }
+}
+
+module.exports = {
+    createWorkOutPlan,
+    updateWorkOutPlan
+};

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import './addInstructor.css';
 import NavBar from '../../NavBar/Navbar.component';
 import axios from 'axios';
@@ -52,12 +53,22 @@ class addInstructor extends Component {
         axios.post('http://localhost:8081/instructor/create', formData)
             .then(response => {
                 alert('Data Succesfullt inserted');
+                this.setState({
+                    name: '',
+                    email: '',
+                    category: '',
+                    introduction: '',
+                    discription: ''
+                  });
+
             })
             .catch(error => {
                 console.log(error.message);
                 alert(error.message);
             })
     }
+
+   
 
     render() {
         return (
@@ -126,8 +137,10 @@ class addInstructor extends Component {
                 
                         </div><br></br>
                         <button type="submit" id="bookBut">Save</button>
-                        <button id="bookButTab">Clear</button>
-                        <button id="bookButTabC">Cancel</button>
+                        
+                        <Link to="/instructor">
+                        <button id="bookButTabC">Close</button>
+                        </Link>
                     </form>
                 </div>
             </div>

@@ -52,6 +52,10 @@ class HomeInstructor extends Component {
         });
     }
 
+    navigateEditPage(e, insID) {
+        window.location = `/instructorEdit/${insID}`
+    }
+
     render() {
         return (
 
@@ -83,12 +87,12 @@ class HomeInstructor extends Component {
                                     <h5 className="card-title">
                                     {data.category}
                                     </h5>
-                                    <p className="card-text">
+                                    <h6>
                                     {data.email}
-                                    </p>
+                                    </h6>
                                     
 
-                                        <button className="UpdateBut">Update</button> <button className="deleBut" onClick={e => this.DeleteKeynote(e, data._id)}>Delete</button>
+                                        <button className="UpdateBut" onClick={e => this.navigateEditPage(e, data._id)}>Edit</button> <button className="deleBut" onClick={e => this.DeleteKeynote(e, data._id)}>Delete</button>
                                         
 
 

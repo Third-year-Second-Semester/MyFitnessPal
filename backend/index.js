@@ -6,11 +6,13 @@ const router = require("./router/router");
 const instructorRoute = require("./router/instructor.router");
 const fs = require('fs');
 require("dotenv").config();
+const path = require('path');
 
 app.get("/", (req, res) => {
   res.send("Home Route");
 });
 
+app.use('/uploads/inSimages', express.static(path.join('uploads','inSimages')));
 
 app.use((error,req,res,next)=>{
   if(req.file){

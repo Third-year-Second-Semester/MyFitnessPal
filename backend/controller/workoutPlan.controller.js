@@ -54,9 +54,23 @@ const getWorkoutPlan = async(req,res) =>{
     }
 }
 
+//delete a workoutplan
+const deleteWorkoutPlan = async (req, res) => {
+    if (req.params && req.params.id) {
+        await WorkOutPlanModel.findByIdAndRemove(req.params.id)
+            .then(response => {
+                res.status(200).send({ data: response });
+            })
+            .catch(error => {
+                res.status(500).send({ error: error.message });
+            });
+    }
+}
+
 module.exports = {
     createWorkOutPlan,
     updateWorkOutPlan,
     getAlLWorkoutPlans,
-    getWorkoutPlan
+    getWorkoutPlan,
+    deleteWorkoutPlan
 };

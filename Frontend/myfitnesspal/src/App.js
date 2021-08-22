@@ -5,14 +5,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as  Router,Route,Switch } from "react-router-dom";
 import Home from "./component/Home/home.component";
 import MealPlan from "./component/MealPlan/MealPlan.component";
+import CreateBlogPost from "./component/BlogPost/admin/createBlogPost";
+//import CreateNew from "./component/BlogPost/admin/createNew";
+import BlogsList from "./component/BlogPost/admin/blogsList";
+import CreateB from './component/BlogPost/admin/createB';
+import ViewBlogList from './component/BlogPost/user/viewAllBlogs';
+import ViewBlogPost from "./component/BlogPost/user/viewBlogpost";
+
 
 function App() {
   return (
-    <div >
+    <div>
       <Router>
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route path="/adminmeals" component={MealPlan}></Route>
+
+          <Route path="/create-blogpost" component={CreateBlogPost}></Route>
+          <Route path="/createb" component={CreateB}></Route>
+          <Route path="/adminbloglist" component={BlogsList}></Route>
+          <Route path="/viewblog" component={ViewBlogPost}></Route>
+          <Route path="/viewallblogs" component={ViewBlogList}></Route>
         </Switch>
       </Router>
     </div>

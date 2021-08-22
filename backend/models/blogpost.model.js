@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const BlogPostSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  img: {type: String},
-  body: { type: String, required: true },
+  bodyContent: { type: String, required: false },
   date: { type: Date, default: Date.now },
 });
 

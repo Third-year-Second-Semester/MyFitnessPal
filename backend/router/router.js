@@ -1,8 +1,7 @@
 let router = require ('express').Router()
 let mealPlanController =  require('../controller/mealplan.controller')
 let blogpostController = require("../controller/blogpost.controller");
-
-
+const fileUpload = require("../MiddlewearBlogpost/blogpostImageupload");
 
 router.get("/",(req,res)=>{
     res.send("API is working")
@@ -27,11 +26,13 @@ router.route("/mealplans/:id").put(mealPlanController.updateMealPlanById)
 blogpost routes
 */
 
-router.route("/blogposts/create").post(blogpostController.createBlogPost)
+
+router.route("/blogposts/create", fileUpload.single("image")).post(blogpostController.createBlogPost);
+router.route("/blogposts/createb").post(blogpostController.createBlogPost);
 router.route("/blogposts/update/:id").put(blogpostController.updateBlogPost)
 router.route("/blogposts/delete/:id").delete(blogpostController.deleteBlogPost)
 router.route("/blogposts/:id").get(blogpostController.getaBlogPost)
 router.route("/blogposts").get(blogpostController.getAllBlogPostsDetails)
-
+router.route("/blogposts/upload").post(blogpostController.uploadBlogImg)
 
 module.exports = router

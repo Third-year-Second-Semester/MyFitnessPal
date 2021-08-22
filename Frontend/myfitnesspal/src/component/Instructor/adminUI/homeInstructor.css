@@ -1,0 +1,139 @@
+.homebackStyle
+{
+	text-align: center;
+}
+
+.pagetitle{
+  text-align: center;
+}
+
+.addBut
+{
+	width:220px;
+	padding:12px;
+	border-radius:5px;
+	outline: 10px;
+	background-color:#00be0a;
+	border:1px solid rgb(223, 238, 14);
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+.addBut:hover
+{
+	background-color:#0e9e0e;
+	width:220px;
+}
+
+.repBut
+{
+	width:250px;
+	padding:12px;
+    margin-left: 50px;
+	border-radius:5px;
+	outline: 10px;
+	background-color:#f38404;
+	border:1px solid rgb(207, 32, 8);
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+.repBut:hover
+{
+	background-color:#ce580a;
+	width:250px;
+}
+
+.UpdateBut
+{
+	width:150px;
+	padding:10px;
+	border-radius:5px;
+	outline: 10px;
+	background-color:#0310ce;
+	border:3px solid rgb(13, 185, 238);
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+.UpdateBut:hover
+{
+	background-color:#0a0ca0;
+	width:150px;
+}
+  
+.deleBut
+{
+	width:150px;
+	padding:10px;
+	border-radius:5px;
+	outline: 10px;
+	background-color:#d10606;
+	border:3px solid rgb(252, 0, 0);
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+.deleBut:hover
+{
+	background-color:#960808;
+	width:150px;
+}
+  
+  .col-md-4 {
+    margin-bottom: 30px;
+  }
+  
+  .card {
+    padding: 20px;
+    border: solid 1px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    
+  }
+  .card:hover {
+    box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.08);
+  }
+  .card-title {
+    margin-top: 10px;
+  }
+  .card-text {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .card-text .fa {
+    font-size: 26px;
+  }
+  .avatar {
+    width: 140px;
+    margin: auto;
+  }
+  .avatar img {
+    border: solid 6px transparent;
+    border-radius: 50%;
+  }
+  .card:hover .avatar img {
+    border-color: rgb(99, 204, 131);
+  }
+  
+  .btn {
+    border-radius: 25px;
+  }
+  
+  footer p {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  footer p a,
+  footer p a:hover {
+    color: rgb(99, 204, 131);
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1040px;
+    }
+  }

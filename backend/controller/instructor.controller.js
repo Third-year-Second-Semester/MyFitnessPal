@@ -4,7 +4,23 @@ const Instructor = require('../models/instructor.model');
 //Add new Instructor
 const createInstructor = async (req, res) => {
     if (req.body) {
-        const instructor = new Instructor(req.body);
+        const name = req.body.name;
+        const email = req.body.email;
+        const category = req.body.category;
+        const introduction = req.body.introduction;
+        const discription = req.body.discription;
+        const image = req.file.path;
+
+        const newInstructorData = {
+            name,
+            email,
+            category,
+            introduction,
+            discription,
+            image
+        }
+
+        const instructor = new Instructor(newInstructorData);
         await instructor.save()
             .then(data => {
                 res.status(200).send({ data: data });

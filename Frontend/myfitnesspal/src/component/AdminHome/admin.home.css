@@ -1,0 +1,47 @@
+
+.adminMain{
+    background-color: black;
+    background-image: url('../../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    mask-image: linear-gradient(to bottom, #2E3136 10%, black);
+   
+}
+.adminDashboardSingleItem{
+    margin-top: 5%;
+    width: max-content;
+    height: max-content;
+    border-radius: 30px ;
+    display: block;
+    background-color: rgba(181, 172, 172, 40%);
+    text-align: center;
+    margin: 5%;
+}
+.adminDashboardSingleItemImg{
+    width: max-content;
+    height: auto;
+    
+    margin: 20px;  
+}
+.adminDashButton{
+    width: max-content;
+    font-size: large;
+    background-color: #155ECB;
+    border: solid white 2px ;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 5%;
+
+}
+.insideContainer{
+    width: 100vw;
+
+    
+}

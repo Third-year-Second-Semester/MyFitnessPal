@@ -8,7 +8,7 @@ export default function MealPlan  (props) {
         <div>
             <NavBar></NavBar>
 
-            Meal Plan page
+            Meal Plan Admin page
         </div>
     )
     

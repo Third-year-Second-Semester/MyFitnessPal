@@ -5,20 +5,19 @@ const BlogPost = require("../models/blogpost.model");
 const createBlogPost = async (req, res) => {
   if (req.body) {
     const title = req.body.title;
-    const image = req.file.path;
     const bodyContent = req.body.bodyContent;
     const date = req.body.date;
+    const image = req.file.path;
 
     const newBlogpost = {
       title,
-      image,
       bodyContent,
       date,
+      image
     };
 
     const blogpost = new BlogPost(newBlogpost);
-    await blogpost
-      .save()
+    await blogpost.save()
       .then((data) => {
         res.status(200).send({ data: data });
       })

@@ -4,15 +4,19 @@ let mongoose = require("mongoose");
 const cors = require("cors");
 const router = require("./router/router");
 const instructorRoute = require("./router/instructor.router");
+const blogpostRouter = require("./router/blogpost.router");
+
 const fs = require('fs');
 require("dotenv").config();
 const path = require('path');
+
 
 app.get("/", (req, res) => {
   res.send("Home Route");
 });
 
 app.use('/uploads/inSimages', express.static(path.join('uploads','inSimages')));
+app.use('/uploads/blogpostImgs', express.static(path.join('uploads','blogpostImgs')));
 
 app.use((error,req,res,next)=>{
   if(req.file){
@@ -49,6 +53,8 @@ if (!db) {
 
 app.use("/api",router)
 app.use("/instructor",instructorRoute())
+app.use("/blogposts", blogpostRouter());
+
 
 app.listen(process.env.PORT, () => {
   console.log("Backend Started " + process.env.PORT);

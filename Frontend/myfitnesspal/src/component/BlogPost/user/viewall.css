@@ -1,0 +1,22 @@
+.mycontainer{
+    margin: 30px 100px 0 100px;
+}
+
+#title{
+    font-size: 95px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+}
+
+#titleImg {
+    width: 1300px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.btn{
+    margin-right: 20px;
+}

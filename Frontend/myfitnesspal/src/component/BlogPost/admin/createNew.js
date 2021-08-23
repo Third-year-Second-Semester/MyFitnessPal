@@ -38,7 +38,7 @@ class CreateNew extends Component {
 
 
     axios
-      .post("http://localhost:8084/api/blogposts/createb", formData)
+      .post("http://localhost:8084/blogposts/createb", formData)
       .then((response) => {
         alert("Data Succesfully inserted");
         this.setState({
@@ -83,7 +83,6 @@ class CreateNew extends Component {
                 onChange={this.onChange}
               ></textarea>
             </div>
-
             <br></br>
             <button type="submit" >
               Save

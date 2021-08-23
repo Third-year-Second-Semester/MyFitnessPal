@@ -16,6 +16,7 @@ import ViewABlog from './component/BlogPost/admin/viewablog';
 import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
 import HomeInstructor from './component/Instructor/adminUI/homeInstructor';
 import EditInstructor from './component/Instructor/adminUI/editInstructor';
+import AddWorkoutPlan from './component/WorkoutPlan/addWorkoutPlan.component';
 
 
 function App() {
@@ -35,6 +36,11 @@ function App() {
           <Route path="/instructor/add" component={InstructorAdd}></Route>
           <Route path="/instructor" component={HomeInstructor}></Route>
           <Route path="/instructorEdit/:id" component={EditInstructor}></Route>
+
+          
+          <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
+
+
         </Switch>
       </Router>
     </div>

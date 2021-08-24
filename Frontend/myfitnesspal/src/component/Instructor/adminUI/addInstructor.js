@@ -50,6 +50,7 @@ class addInstructor extends Component {
             image: this.state.image
         }*/
       //  console.log(this.state.name);
+        console.log(formData);
         axios.post('http://localhost:8081/instructor/create', formData)
             .then(response => {
                 alert('Data Succesfullt inserted');

@@ -8,15 +8,16 @@ import MealPlan from "./component/MealPlan/MealPlan.component";
 import CreateBlogPost from "./component/BlogPost/admin/createBlogPost";
 //import CreateNew from "./component/BlogPost/admin/createNew";
 import BlogsList from "./component/BlogPost/admin/blogsList";
-import CreateB from './component/BlogPost/admin/createB';
-import ViewBlogList from './component/BlogPost/user/viewAllBlogs';
+import ViewAllBlogs from './component/BlogPost/user/viewAllBlogs';
 import ViewBlogPost from "./component/BlogPost/user/viewBlogpost";
+import ViewABlog from './component/BlogPost/admin/viewablog';
 
 
 import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
 import HomeInstructor from './component/Instructor/adminUI/homeInstructor';
 import EditInstructor from './component/Instructor/adminUI/editInstructor';
 
+import AddWorkoutPlan from './component/WorkoutPlan/addWorkoutPlan.component';
 import EditWorkoutPlan from "./component/WorkoutPlan/editWorkoutPlan.component";
 
 
@@ -28,17 +29,17 @@ function App() {
           <Route exact path="/" component={Home}></Route>
           <Route path="/adminmeals" component={MealPlan}></Route>
 
-
           <Route path="/create-blogpost" component={CreateBlogPost}></Route>
-          <Route path="/createb" component={CreateB}></Route>
           <Route path="/adminbloglist" component={BlogsList}></Route>
-          <Route path="/viewblog" component={ViewBlogPost}></Route>
-          <Route path="/viewallblogs" component={ViewBlogList}></Route>
+          <Route path="/adminviewblog/:id" component={ViewABlog}></Route>
+          <Route path="/viewallblogs" component={ViewAllBlogs}></Route>
+          <Route path="/blog/:id" component={ViewBlogPost}></Route>
 
           <Route path="/instructor/add" component={InstructorAdd}></Route>
           <Route path="/instructor" component={HomeInstructor}></Route>
           <Route path="/instructorEdit/:id" component={EditInstructor}></Route>
 
+          <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>
 
         </Switch>

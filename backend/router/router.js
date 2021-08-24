@@ -33,14 +33,14 @@ blogpost routes
 */
 
 
-router.route("/blogposts/create", fileUpload.single("image")).post(blogpostController.createBlogPost);
-router.route("/blogposts/createb").post(blogpostController.createBlogPost);
-router.route("/blogposts/update/:id").put(blogpostController.updateBlogPost)
-router.route("/blogposts/delete/:id").delete(blogpostController.deleteBlogPost)
-router.route("/blogposts/:id").get(blogpostController.getaBlogPost)
-router.route("/blogposts").get(blogpostController.getAllBlogPostsDetails)
-
-router.route("/blogposts/upload").post(blogpostController.uploadBlogImg)
+// router.route("/blogposts/create", fileUpload.single("image")).post(blogpostController.createBlogPost);
+// router.route("/blogposts/createb").post(blogpostController.createBlogPost);
+// router.route("/blogposts/update/:id").put(blogpostController.updateBlogPost);
+// router.route("/blogposts/delete/:id").delete(blogpostController.deleteBlogPost);
+// router.route("/blogposts/:id").get(blogpostController.getaBlogPost);
+// router.route("/blogposts").get(blogpostController.getAllBlogPostsDetails);
+    
+// router.route("/blogposts/upload").post(blogpostController.uploadBlogImg);
 
 
 /*

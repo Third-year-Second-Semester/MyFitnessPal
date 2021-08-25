@@ -23,7 +23,7 @@ export default function Home(props) {
         </div>
 
         <div className="col-4">
-          <Link>
+          <Link to="/instructor">
             <SinglItem name="Instructor Management" img="Img3"></SinglItem>
           </Link>
         </div>

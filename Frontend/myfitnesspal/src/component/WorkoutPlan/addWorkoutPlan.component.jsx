@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const initialState = {
     name: "",
-    level: "",
+    level: "Beginner",
     area: "",
     description: "",
     detailedDescription: "",

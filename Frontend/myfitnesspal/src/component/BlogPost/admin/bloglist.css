@@ -1,0 +1,36 @@
+.title{
+    text-align: center;
+    font-size: 70px;
+    color: teal;
+    font-weight: bold;
+    
+}
+
+#addbtn{
+    padding: 8px;
+    border-radius: 15px;
+    border-color: rgb(255, 255, 255);
+    margin-left: 200px;
+    color: white;
+    background-color: rgb(221, 89, 45);
+    font-size: 18px;
+}
+
+#addbtn:hover{
+    background-color: rgb(200, 76, 35);;
+}
+
+#generatebtn{
+    padding: 8px;
+    border-radius: 15px;
+    border-color: rgb(255, 255, 255);
+    margin-left: 200px;
+    color: white;
+    background-color: rgb(13, 153, 88);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#generatebtn:hover{
+    background-color: rgb(12, 126, 73);;
+}

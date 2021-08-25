@@ -3,7 +3,7 @@
 }
 
 #title{
-    font-size: 95px;
+    font-size: 110px;
     color: rgb(255, 255, 255);
     position: absolute;
     top: 50%;
@@ -13,8 +13,9 @@
 
 #titleImg {
     width: 1300px;
-    height: 250px;
+    height: 225px;
     object-fit: cover;
+    
 }
 
 .btn{

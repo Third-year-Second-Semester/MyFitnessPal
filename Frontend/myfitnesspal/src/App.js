@@ -40,13 +40,9 @@ function App() {
           <Route path="/instructor" component={HomeInstructor}></Route>
           <Route path="/instructorEdit/:id" component={EditInstructor}></Route>
 
-
-          <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
-
-
-          <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>
+          <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
 
 
         </Switch>

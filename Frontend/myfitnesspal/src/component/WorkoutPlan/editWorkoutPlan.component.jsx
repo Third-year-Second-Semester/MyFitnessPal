@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import NavBar from '../../NavBar/Navbar.component';
+import NavBar from '../NavBar/Navbar.component';
 
 class EditWorkoutPlan extends Component {
 
@@ -32,10 +32,12 @@ class EditWorkoutPlan extends Component {
                 this.setState({
                     id: response.data.data._id,
                     name: response.data.data.name,
-                    email: response.data.data.email,
-                    category: response.data.data.category,
-                    introduction: response.data.data.introduction,
-                    discription: response.data.data.discription,
+                    area: response.data.data.area,
+                    level: response.data.data.level,
+                    description: response.data.data.description,
+                    price: response.data.data.price,
+                    detailedDescription: response.data.data.detailedDescription,
+                    imgUrl: response.data.data.imgUrl
                 });
                 console.log(response.data.data._id);
                 console.log(this.props.match.params.id);
@@ -60,7 +62,7 @@ class EditWorkoutPlan extends Component {
         .then(response =>{
             alert('Instructor Details updated');
             console.log(this.state.id);
-            window.location = `/instructor`
+            window.location = `/workoutplan`
         })
         .catch(error =>{
             console.log(error.message);
@@ -76,7 +78,7 @@ class EditWorkoutPlan extends Component {
                 <div className="booking-form" >
 
                     <form id="booking" onSubmit={this.onSubmit}>
-                        <h1>Add New WorkOut Plan</h1>
+                        <h1>Edit WorkOut Plan</h1>
 
                         <div >
                             <input

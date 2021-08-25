@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import NavBar from '../../NavBar/Navbar.component';
+import NavBar from '../NavBar/Navbar.component';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import './workoutplanHome.styles.css';
 
 class ManageWorkoutPlans extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class ManageWorkoutPlans extends Component {
             buttons: [
                 {
                     label: 'Yes',
-                    onClick: () => axios.delete(`http://localhost:8081/instructor/delete/${planId}`)
+                    onClick: () => axios.delete(`http://localhost:8081/api/workoutplans/${planId}`)
                         .then(response => {
 
                             //alert('Delete Success..!');
@@ -62,7 +63,7 @@ class ManageWorkoutPlans extends Component {
                 <br></br>
                 <div className='homebackStyle'>
                     <Link to="/workoutplan/add">
-                        <button className="addBut">+ Add New Instructor</button>
+                        <button className="addBut">+ Add New Workout Plan</button>
                     </Link>
                 </div>
                 <br></br>

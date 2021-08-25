@@ -28,7 +28,7 @@ export default function Home(props) {
           </Link>
         </div>
         <div className="col-4">
-          <Link>
+          <Link to="/adminbloglist">
             <SinglItem name="Health Blog Management" img="Img4"></SinglItem>
           </Link>
         </div>

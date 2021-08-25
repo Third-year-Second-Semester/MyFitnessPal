@@ -2,12 +2,14 @@ import axios from "axios";
 import { Button } from "bootstrap";
 import React, { Component } from "react";
 import Navbar from "../../NavBar/Navbar.component";
+import "./viewblogpost.css";
 
 class ViewBlogPost extends Component {
   constructor(props) {
     super(props);
     this.state = {
       blogs: [],
+      date: ""
       
     };
   }
@@ -16,7 +18,7 @@ class ViewBlogPost extends Component {
       axios.get(`http://localhost:8084/blogposts/${this.props.match.params.id}`)
         .then((response) => {
       this.setState({ blogs: response.data.data });
-      
+      this.setState({ date: this.state.blogs.date });
 
       console.log(response.data.data._id);
       console.log(this.props.match.params.id);
@@ -31,12 +33,19 @@ class ViewBlogPost extends Component {
         <Navbar />
 
         <div className="container">
-          <h2>{this.state.blogs.title}</h2>
           <br />
-          <div>{this.state.blogs.bodyContent}</div>
+          <h2 className="blogtitle">{this.state.blogs.title}</h2>
           <br />
-          <p>{this.state.blogs.date}</p>
-          <img src={this.state.blogs.image} />
+          <img
+            className="blogimg"
+            src={`http://localhost:8084/${this.state.blogs.image}`}
+          />
+          <br />
+          <br />
+          <div className="bodycontent">{this.state.blogs.bodyContent}</div>
+          <br />
+          <p className="date">{this.state.date.substr(0, 10)}</p>
+          <br />
         </div>
       </div>
     );

@@ -30,7 +30,7 @@ function App() {
           <Route exact path="/" component={Home}></Route>
           <Route path="/adminmeals" component={MealPlan}></Route>
 
-          <Route path="/create-blogpost" component={CreateBlogPost}></Route>
+          <Route path="/blogpost/create" component={CreateBlogPost}></Route>
           <Route path="/adminbloglist" component={BlogsList}></Route>
           <Route path="/adminviewblog/:id" component={ViewABlog}></Route>
           <Route path="/viewallblogs" component={ViewAllBlogs}></Route>
@@ -41,9 +41,13 @@ function App() {
           <Route path="/instructorEdit/:id" component={EditInstructor}></Route>
 
 
+          <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
+
+
           <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>
+
 
         </Switch>
       </Router>

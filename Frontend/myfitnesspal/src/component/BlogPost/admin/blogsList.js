@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 import Navbar from "../../NavBar/Navbar.component";
+import './bloglist.css';
 
 class BlogsList extends Component {
   constructor(props) {
@@ -9,8 +11,6 @@ class BlogsList extends Component {
       blogs: [],
     };
 
-    //this.onChange = this.onChange.bind(this);
-    this.onChangeStatus = this.onChangeStatus.bind(this);
   }
 
   componentDidMount(e) {
@@ -24,37 +24,45 @@ class BlogsList extends Component {
       return (
         <div>
           <Navbar />
-          <h1>Workshop Proposals List</h1>
+
+          <p className="title">Health Blog Management</p>
 
           <div className="container">
-            <button class="btn btn-primary" style={{ padding: "8px" }}>
-              Generate Blogs Details Report
-            </button>
+            <Link to="/blogpost/create">
+              <button id="addbtn">Add New Blog Post</button>
+            </Link>
+
+            <Link>
+              <button id="generatebtn">Generate Blogs Details Report</button>
+            </Link>
+
+            <br />
+            <br />
             {this.state.blogs.length > 0 &&
-              this.state.blogs.map((item, index) => (
+              this.state.blogs.map((blogs) => (
                 <div className="card mb-3" style={{ maxWidth: "1200px" }}>
-                  <div className="row g-0" key={item.id}>
+                  <div className="row g-0" key={blogs._id}>
                     <div className="col-md-4">
                       <img
-                        src="./workoutafterbreak.jpg"
+                        src={`http://localhost:8084/${blogs.image}`}
                         className="img-fluid rounded-start"
                         alt="..."
                       />
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title">{item.title}</h5>
+                        <h5 className="card-title">{blogs.title}</h5>
                         <p className="card-text">
-                          {item.bodyContent.substring(0, 250)}
+                          {blogs.bodyContent.substring(0, 250)}
                         </p>
-                       
+
                         <p className="card-text">
-                          <small className="text-muted">{item.date}</small>
+                          <small className="text-muted">{blogs.date}</small>
                         </p>
 
                         <div className="d-grid gap-2 d-md-block">
                           <a
-                            href={`/adminviewblog/${item._id}`}
+                            href={`/adminviewblog/${blogs._id}`}
                             className="btn btn-primary"
                           >
                             VIEW
@@ -63,7 +71,7 @@ class BlogsList extends Component {
                           {"  "}
 
                           <a
-                            href={`/editblog/${item._id}`}
+                            href={`/editblog/${blogs._id}`}
                             className="btn btn-success"
                           >
                             EDIT
@@ -72,7 +80,7 @@ class BlogsList extends Component {
                           {"  "}
 
                           <a
-                            href={`/deleteblog/${item._id}`}
+                            href={`/deleteblog/${blogs._id}`}
                             className="btn btn-danger"
                           >
                             DELETE

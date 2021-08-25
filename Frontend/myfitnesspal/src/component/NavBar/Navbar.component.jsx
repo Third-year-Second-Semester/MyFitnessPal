@@ -25,7 +25,7 @@ export default function NavBar(){
                         <SingleLink name="Instructors" link="/instructor"/>
                     </li>
                     <li className="nav-item">
-                        <SingleLink name="Blogs"/>
+                        <SingleLink name="Blogs" link="/adminbloglist"/>
                     </li>
 
                 </ul>

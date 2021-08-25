@@ -7,6 +7,7 @@ import MealPlan from "./component/MealPlan/MealPlan.component";
 import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
 import HomeInstructor from './component/Instructor/adminUI/homeInstructor';
 import EditInstructor from './component/Instructor/adminUI/editInstructor';
+import ManageWorkoutPlans from "./component/WorkoutPlan/workoutplanHome.component";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/instructor/add" component={InstructorAdd}></Route>
           <Route path="/instructor" component={HomeInstructor}></Route>
           <Route path="/instructorEdit/:id" component={EditInstructor}></Route>
+
+          <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
         </Switch>
       </Router>
     </div>

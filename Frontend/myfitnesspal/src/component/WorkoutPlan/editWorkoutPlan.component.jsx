@@ -9,6 +9,7 @@ class EditWorkoutPlan extends Component {
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);
+        this.handleOptionChange = this.handleOptionChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             name: '',
@@ -26,6 +27,12 @@ class EditWorkoutPlan extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    handleOptionChange(e) {
+        this.setState({
+          area: e.target.value
+        });
+      }
+
     componentDidMount() {
         axios.get(`http://localhost:8081/api/workoutplans/${this.props.match.params.id}`)
             .then(response => {
@@ -35,8 +42,8 @@ class EditWorkoutPlan extends Component {
                     name: response.data.data.name,
                     area: response.data.data.area,
                     level: response.data.data.level,
-                    description: response.data.data.description,
                     price: response.data.data.price,
+                    description: response.data.data.description,
                     detailedDescription: response.data.data.detailedDescription,
                     imgUrl: response.data.data.imgUrl
                 });
@@ -52,17 +59,17 @@ class EditWorkoutPlan extends Component {
     onSubmit(e) {
         e.preventDefault();
         let workoutPlan = {
-            _id:this.state.id,
+            _id:   this.state.id,
             name: this.state.name,
-            email: this.state.email,
-            category:this.state.category,
-            introduction:this.state.introduction,
-            discription:this.state.discription
+            area: this.state.area,
+            level: this.state.level,
+            price: this.state.price,
+            description: this.state.description,
+            detailedDescription: this.state.detailedDescription,
         }
         axios.put(`http://localhost:8081/api/workoutplans/${this.state.id}`, workoutPlan)
         .then(response =>{
-            alert('Instructor Details updated');
-            console.log(this.state.id);
+            alert('Workout Plan updated');
             window.location = `/workoutplan`
         })
         .catch(error =>{
@@ -221,14 +228,14 @@ class EditWorkoutPlan extends Component {
                                 onChange={this.handlePhoto}
 
                             /> */}
-                            <input
+                            {/* <input
                                 type="text"
                                 className="inputBoxTab"
                                 placeholder="Image"
                                 name="imgUrl"
                                 value={this.state.imgUrl}
                                 onChange={this.onChange}
-                            />
+                            /> */}
 
                 
                         </div><br></br>

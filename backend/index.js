@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 
 app.use('/uploads/inSimages', express.static(path.join('uploads','inSimages')));
 app.use('/uploads/blogpostImgs', express.static(path.join('uploads','blogpostImgs')));
+app.use('/uploads/workoutPlan', express.static(path.join('uploads','workoutPlan')));
 
 app.use((error,req,res,next)=>{
   if(req.file){

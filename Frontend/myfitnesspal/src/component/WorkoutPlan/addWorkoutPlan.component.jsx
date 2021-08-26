@@ -20,6 +20,7 @@ class AddWorkoutPlan extends Component {
         super(prop);
         this.onChange = this.onChange.bind(this);
         this.handleOptionChange = this.handleOptionChange.bind(this);
+        this.handlePhoto = this.handlePhoto.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.state = initialState
     }
@@ -35,35 +36,40 @@ class AddWorkoutPlan extends Component {
         });
       }
 
-    handlePhoto = (e) => {
-        this.setState({ image: e.target.files[0]});
+    handlePhoto (e){
+        this.setState({ imgUrl: e.target.files[0]});
     }
 
     onSubmit(e) {
         e.preventDefault();
-        let workoutPlan = {
-            name: this.state.name,
-            area: this.state.area,
-            level: this.state.level,
-            price: this.state.price,
-            description: this.state.description,
-            detailedDescription: this.state.detailedDescription,
-            imgUrl: this.state.imgUrl
-        }
+        const workoutPlan = new FormData();
+        
+        workoutPlan.append('name', this.state.name);
+        workoutPlan.append('area', this.state.area);
+        workoutPlan.append('level', this.state.level);
+        workoutPlan.append('price', this.state.price);
+        workoutPlan.append('description', this.state.description);
+        workoutPlan.append('detailedDescription', this.state.detailedDescription);
+        workoutPlan.append('imgUrl', this.state.imgUrl);
+        
 
-        console.log(workoutPlan);
+        console.log(this.state.imgUrl);
 
-        axios.post('http://localhost:8081/api/workoutplans', workoutPlan)
+        axios.post('http://localhost:8081/api/workoutplans', workoutPlan,
+            {
+                headers: { 'Content-Type':  'multipart/form-data' }
+            }
+        )
             .then(response => {
                 alert('Data Succesfully inserted');
+                console.log(this.state.imgUrl);
                 this.setState({
                     name: '',
                     area: '',
                     level: '',
                     price: '',
                     description: '',
-                    detailedDescription: '',
-                    imgUrl: ''
+                    detailedDescription: ''
                   });
                   window.location = `/workoutplan`
 
@@ -217,23 +223,22 @@ class AddWorkoutPlan extends Component {
 
                     
 
-                        {/* <input
+                        <input
                                 type="file"
-                                accept=".jpg,.png,.jpeg"
-                                name="image"
+                                name="imgUrl"
                                 id="imgButTab"
                                 
                                 onChange={this.handlePhoto}
 
-                            /> */}
-                            <input
+                            />
+                            {/* <input
                                 type="text"
                                 className="inputBoxTab"
                                 placeholder="Image"
                                 name="imgUrl"
                                 value={this.state.imgUrl}
                                 onChange={this.onChange}
-                            />
+                            /> */}
 
                 
                         </div><br></br>

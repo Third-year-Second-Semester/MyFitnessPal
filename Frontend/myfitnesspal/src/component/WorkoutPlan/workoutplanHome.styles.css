@@ -1,4 +1,4 @@
-.homebackStyle
+.wp-homebackStyle
 {
 	text-align: center;
 }
@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.addBut
+.wp-addBut
 {
 	width:220px;
 	padding:12px;
@@ -20,7 +20,7 @@
 	cursor: pointer;
 }
 
-.addBut:hover
+.wp-addBut:hover
 {
 	background-color:#0e9e0e;
 	width:220px;
@@ -46,7 +46,7 @@
 	width:250px;
 }
 
-.UpdateBut
+.wp-UpdateBut
 {
 	width:150px;
 	padding:10px;
@@ -59,13 +59,13 @@
 	cursor: pointer;
 }
 
-.UpdateBut:hover
+.wp-UpdateBut:hover
 {
 	background-color:#0a0ca0;
 	width:150px;
 }
   
-.deleBut
+.wp-deleBut
 {
 	width:150px;
 	padding:10px;
@@ -78,7 +78,7 @@
 	cursor: pointer;
 }
 
-.deleBut:hover
+.wp-deleBut:hover
 {
 	background-color:#960808;
 	width:150px;
@@ -88,35 +88,37 @@
     margin-bottom: 30px;
   }
   
-  .card {
+  .wp-card {
     padding: 20px;
     border: solid 1px rgba(0, 0, 0, 0.08);
     text-align: center;
     
   }
-  .card:hover {
+  .wp-card:hover {
     box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.08);
   }
-  .card-title {
+  .wp-card-title {
     margin-top: 10px;
   }
   .card-text {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
   }
-  .card-text .fa {
+  .wp-card-text .fa {
     font-size: 26px;
   }
-  .avatar {
-    width: 140px;
+  .wp-avatar {
+    width: 100%;
+    height: auto;
     margin: auto;
   }
-  .avatar img {
+
+
+  .wp-avatar img {
     border: solid 6px transparent;
-    border-radius: 50%;
   }
-  .card:hover .avatar img {
-    border-color: rgb(99, 204, 131);
+  .wp-card:hover .wp-avatar img {
+    opacity: 0.3;
   }
   
   .btn {

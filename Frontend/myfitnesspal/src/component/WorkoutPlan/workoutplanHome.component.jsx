@@ -61,31 +61,33 @@ class ManageWorkoutPlans extends Component {
                 <h1 className="pagetitle">Manage Workout Plans</h1>
                 
                 <br></br>
-                <div className='homebackStyle'>
+                <div className='wp-homebackStyle'>
                     <Link to="/workoutplan/add">
-                        <button className="addBut">+ Add New Workout Plan</button>
+                        <button className="wp-addBut">+ Add New Workout Plan</button>
                     </Link>
                 </div>
                 <br></br>
                 <div className="row">
                     {this.state.data.map(data => (
                         <div className="col-md-4 animated fadeIn" key={data.id}>
-                            <div className="card">
-                                <div className="card-body">
-                                    <div className="avatar">
+                            <div className="wp-card">
+                                <div className="wp-card-body">
+                                    <div className="wp-avatar">
                                         <img
                                             src={`http://localhost:8081/${data.imgUrl}`}
+                                            alt =""
                                             className="card-img-top"
-                                            alt=""
+                                            width = "600"
+                                            height = "400"
                                         />
                                     </div>
 
-                                    <h3 className="card-title">
+                                    <h3 className="wp-card-title">
                                         {data.name}
                                     </h3>
 
-                                    <button className="UpdateBut" onClick={e => this.navigateEditPage(e, data._id)}>Update Plan</button> 
-                                    <button className="deleBut" onClick={e => this.deleteWorkoutPlan(e, data._id)}>Delete Plan</button>
+                                    <button className="wp-UpdateBut" onClick={e => this.navigateEditPage(e, data._id)}>Update Plan</button> 
+                                    <button className="wp-deleBut" onClick={e => this.deleteWorkoutPlan(e, data._id)}>Delete Plan</button>
   
                                 </div>
                             </div>

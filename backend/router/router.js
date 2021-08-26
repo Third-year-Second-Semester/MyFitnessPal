@@ -5,6 +5,7 @@ let blogpostController = require("../controller/blogpost.controller");
 const fileUpload = require("../MiddlewearBlogpost/blogpostImageupload");
 
 let workoutPlanController = require("../controller/workoutPlan.controller");
+const workoutPlanFileUpload = require("../middlewareWorkoutPlan/workoutPlanFileUpload");
 
 
 
@@ -48,7 +49,7 @@ blogpost routes
 */
 
 //Add Plan
-router.route("/workoutplans").post(workoutPlanController.createWorkOutPlan)
+router.route("/workoutplans").post(workoutPlanFileUpload.single('imgUrl'), workoutPlanController.createWorkOutPlan)
 router.route("/workoutplans").get(workoutPlanController.getAlLWorkoutPlans)
 router.route("/workoutplans/:id").get(workoutPlanController.getWorkoutPlan)
 router.route("/workoutplans/:id").put(workoutPlanController.updateWorkOutPlan)

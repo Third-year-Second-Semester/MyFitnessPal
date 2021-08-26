@@ -1,8 +1,29 @@
 .successButton{
-    width: max-content;
+    width: 210px;
+    height: max-content;
     font-size: large;
     background-color: #155ECB;
-    border: solid white 2px ;
+    border: none;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 5%;
+    margin-right: 10px;
+
+}
+
+
+.cancelButton{
+    width: 210px;
+    height: max-content;
+    font-size: large;
+    background-color: #C01649;
+  border: none;
     border-radius: 12px;
     text-align: center;
     font-weight: bold;
@@ -15,20 +36,9 @@
 
 }
 
-
-.cancelButton{
-    width: max-content;
-    font-size: large;
-    background-color: #C01649;
-    border: solid white 2px ;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-bottom: 5%;
-
+.successButton:hover{
+    border: solid rgb(8, 0, 65) 2px ;
+}
+.cancelButton:hover{
+    border: solid rgb(8, 0, 65) 2px ;
 }

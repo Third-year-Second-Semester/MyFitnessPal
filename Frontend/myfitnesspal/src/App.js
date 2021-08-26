@@ -18,10 +18,12 @@ import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
 import HomeInstructor from './component/Instructor/adminUI/homeInstructor';
 import EditInstructor from './component/Instructor/adminUI/editInstructor';
 import AddNewMeal from './component/MealPlan/addNewMeal.component'
+import ListAllMealPlans from './component/MealPlan/listAllMealPlans.component'
 
 import ManageWorkoutPlans from "./component/WorkoutPlan/workoutplanHome.component";
 import AddWorkoutPlan from './component/WorkoutPlan/addWorkoutPlan.component';
 import EditWorkoutPlan from "./component/WorkoutPlan/editWorkoutPlan.component";
+import ListMealPlans from "./component/MealPlan/listAllMealPlans.component";
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route path="/adminmeals" component={MealPlan}></Route>
+          <Route path="/adminmeallist" component={ListMealPlans}></Route>
 
           <Route path="/addNewMeals" component={AddNewMeal}></Route>
 

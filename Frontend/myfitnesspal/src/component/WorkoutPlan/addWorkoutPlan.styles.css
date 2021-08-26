@@ -1,4 +1,4 @@
-#workoutplan
+ #workoutplan
 {
 	width:100%;
 	background-color:#fefffe;
@@ -59,10 +59,10 @@ table{
 	padding-left: 40px;
 }
 
-label{
+ label{
 	float: left;
 	padding-left: 40px;
-}
+} 
 
 .inputBoxTab
 {
@@ -184,4 +184,4 @@ label{
     .container {
       max-width: 1040px;
     }
-  }
+  } 

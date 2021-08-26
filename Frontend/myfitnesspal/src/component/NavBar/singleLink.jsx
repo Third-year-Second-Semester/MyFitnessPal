@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import './navabr.css'
 import { Link} from "react-router-dom";
@@ -6,7 +7,7 @@ const SingleLink = (props)=>{
 
         <div className={"cusLink"}>
           <Link to={props.link}>
-          <a   aria-current="page" href >{props.name}</a>
+          <div  aria-current="page"   >{props.name}</div>
           </Link>
             
        

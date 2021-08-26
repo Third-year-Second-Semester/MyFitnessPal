@@ -7,6 +7,9 @@ import Img3 from '../../images/item3.png'
 import Img4 from '../../images/item4.png'
 import Img5 from '../../images/item5.png'
 import Img6 from '../../images/item6.png'
+import Img7 from '../../images/item7.png'
+import Img8 from '../../images/item8.png'
+import Img9 from '../../images/item9.png'
 
 
 const AllImages ={
@@ -15,7 +18,10 @@ const AllImages ={
     Img3,
     Img4,
     Img5,
-    Img6
+    Img6,
+    Img7,
+    Img8,
+    Img9
 }
 
 const getByKey= (key)=>{

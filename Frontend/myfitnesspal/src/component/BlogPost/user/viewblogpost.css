@@ -12,6 +12,9 @@
 }
 
 .bodycontent{
+    width: 1000px;
+    padding: 20px;
+    height: 1000px;
     font-size: 18px;
 }
 

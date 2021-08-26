@@ -42,7 +42,15 @@ class ViewBlogPost extends Component {
           />
           <br />
           <br />
-          <div className="bodycontent">{this.state.blogs.bodyContent}</div>
+          <textarea
+            className="bodycontent"
+            
+            onInput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+            value={this.state.blogs.bodyContent}
+          >
+            {this.state.blogs.bodyContent}
+          </textarea>
+          {/* <div className="bodycontent">{this.state.blogs.bodyContent}</div> */}
           <br />
           <p className="date">{this.state.date.substr(0, 10)}</p>
           <br />

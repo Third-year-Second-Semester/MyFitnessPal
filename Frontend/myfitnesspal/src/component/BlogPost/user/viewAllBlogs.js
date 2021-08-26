@@ -31,39 +31,6 @@ class ViewAllBlogs extends Component {
           <p id="title">HEALTH BLOG</p>
         </div>
 
-        {/* <div className="container">
-          {this.state.data.map((data) => (
-            <div className="col-md-4 animated fadeIn" key={data.id}>
-              <div className="card">
-                <div className="card-body">
-                  <div className="avatar">
-                    <img
-                      src={`http://localhost:8084/${data.image}`}
-                      className="card-img-top"
-                      alt=""
-                    />
-                  </div>
-                  <h3 className="card-title">{data.name}</h3>
-                  <h5 className="card-title">{data.category}</h5>
-                  <h6>{data.email}</h6>
-                  <button
-                    className="UpdateBut"
-                    onClick={(e) => this.navigateEditPage(e, data._id)}
-                  >
-                    Edit
-                  </button>{" "}
-                  <button
-                    className="deleBut"
-                    onClick={(e) => this.DeleteKeynote(e, data._id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div> */}
-
         <div className="container">
           {this.state.blogs.length > 0 &&
             this.state.blogs.map((blogs) => (
@@ -86,6 +53,9 @@ class ViewAllBlogs extends Component {
                       <p className="card-text">
                         {blogs.bodyContent.substring(0, 250)}
                       </p>
+                      <p className="card-text">
+                        <small className="text-muted">Posted on: {blogs.date.substring(0,10)}</small>
+                      </p>
                       <a
                         href={`/blog/${blogs._id}`}
                         className="btn btn-primary"
@@ -93,9 +63,7 @@ class ViewAllBlogs extends Component {
                       >
                         Read More..
                       </a>
-                      <p className="card-text">
-                        <small className="text-muted">{blogs.date.substring(0,16)}</small>
-                      </p>
+                      
                     </div>
                   </div>
                 </div>

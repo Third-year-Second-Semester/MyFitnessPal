@@ -11,6 +11,7 @@ import BlogsList from "./component/BlogPost/admin/blogsList";
 import ViewAllBlogs from './component/BlogPost/user/viewAllBlogs';
 import ViewBlogPost from "./component/BlogPost/user/viewBlogpost";
 import ViewABlog from './component/BlogPost/admin/viewablog';
+import EditBlog from './component/BlogPost/admin/editBlog';
 
 
 import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
@@ -34,6 +35,7 @@ function App() {
           <Route path="/adminbloglist" component={BlogsList}></Route>
           <Route path="/adminviewblog/:id" component={ViewABlog}></Route>
           <Route path="/viewallblogs" component={ViewAllBlogs}></Route>
+          <Route path="/editblog/:id" component={EditBlog}></Route>
           <Route path="/blog/:id" component={ViewBlogPost}></Route>
 
           <Route path="/instructor/add" component={InstructorAdd}></Route>
@@ -43,6 +45,7 @@ function App() {
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>
           <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
+
 
 
         </Switch>

@@ -54,11 +54,7 @@ const getaBlogPost = async (req, res) => {
 // update a blogpost
 const updateBlogPost = async (req, res) => {
   if (req.params && req.params.id) {
-    await BlogPost.findByIdAndUpdate(
-      req.params.id,
-      { $set: req.body },
-      { new: true }
-    )
+    await BlogPost.findByIdAndUpdate(req.params.id,{ $set: req.body },{ new: true })
       .then((response) => {
         res.status(200).send({ data: response });
       })

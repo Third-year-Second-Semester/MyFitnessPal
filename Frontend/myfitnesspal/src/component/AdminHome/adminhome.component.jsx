@@ -39,7 +39,7 @@ export default function Home(props) {
         </div>
         <div className="col-sm-4">
           <Link>
-            <SinglItem name="Report Generation" img="Img5"></SinglItem>
+            <SinglItem name="Report Generation" img="Img6"></SinglItem>
           </Link>
         </div>
       </div>

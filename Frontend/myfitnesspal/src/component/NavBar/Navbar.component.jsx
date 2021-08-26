@@ -6,7 +6,7 @@ import SingleLink from "./singleLink";
 export default function NavBar(){
     return(<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-            <a className="navbar-brand " href>My Fitenss Pal - Admin Dasboard </a>
+            <div className="navbar-brand " >My Fitenss Pal - Admin Dasboard </div>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@ export default function NavBar(){
                         <SingleLink name="Instructors" link="/instructor"/>
                     </li>
                     <li className="nav-item">
-                        <SingleLink name="Blogs"/>
+                        <SingleLink name="Blogs" link=""/>
                     </li>
 
                 </ul>

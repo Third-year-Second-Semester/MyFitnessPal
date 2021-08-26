@@ -46,3 +46,37 @@ body,html{
     justify-content: center;
     align-items: center;
 }
+.listMealMain{
+    font-family: Arvo;
+}
+.mealListImgHolder{
+    height: 263.05px;
+    width: 364px;
+    border-radius: 3%;
+}
+
+.mealListItemContainer{
+     margin-top: 10%;
+}
+.mlistTitle{
+    margin-top: 4%;
+    font-weight: bold;
+}
+.mItemDesc{
+    margin-top: 4%;
+}
+.mItemDesc p{
+    width: 400px;
+
+
+}
+
+.redmoreLink{
+    font-style: italic;
+    text-decoration: underline;
+    margin-bottom: 12px;
+}
+.sBuIL{
+   
+}
+

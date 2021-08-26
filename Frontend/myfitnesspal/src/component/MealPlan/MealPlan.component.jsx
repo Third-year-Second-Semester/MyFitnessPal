@@ -13,13 +13,13 @@ export default function MealPlan(props) {
       <div className="container-fluied">
         <div className="row">
         <Link className="col-4 " to="addNewMeals">
-        <SingleItme name="Add New Meal Plan" img="Img7" to=""></SingleItme>
+        <SingleItme name="Add New Meal Plan" img="Img7" ></SingleItme>
       </Link>
-      <Link className="col-4">
-        <SingleItme name="View Meal Plan List" img="Img8" to=""></SingleItme>
+      <Link className="col-4" to="adminmeallist">
+        <SingleItme name="View Meal Plan List" img="Img8" ></SingleItme>
       </Link>
-      <Link className="col-4">
-        <SingleItme name="View Delivery List" img="Img9" to=""></SingleItme>
+      <Link className="col-4" to="">
+        <SingleItme name="View Delivery List" img="Img9" ></SingleItme>
       </Link>
     </div>
 

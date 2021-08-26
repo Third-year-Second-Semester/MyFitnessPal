@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import Navbar from '../../NavBar/Navbar.component';
-import './createBlog.css';
+import React, { Component } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import Navbar from "../../NavBar/Navbar.component";
+import "./createBlog.css";
 
- const initialState = {
-   title: "",
-   bodyContent: "",
-   date: Date.now(),
-   image: ""
- };
-  
+const blog = {
+  title: "",
+  bodyContent: "",
+  date: Date.now(),
+  image: ""
+};
+
 class CreateBlogPost extends Component {
   constructor(prop) {
     super(prop);
@@ -18,8 +18,22 @@ class CreateBlogPost extends Component {
     this.onChange = this.onChange.bind(this);
     this.handlePhoto = this.handlePhoto.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.state = initialState;
-  }
+      this.state = blog;
+    }
+    
+    componentDidMount(e, id) {
+        axios.get(`http://localhost:8084/blogposts/${this.props.match.params.id}`)
+            .then(response => {
+                console.log(response.data.data);
+                const newBlog = response.data.data;
+
+                this.setState({
+                    title: newBlog.title,
+                    bodyContent: newBlog.bodyContent,
+                    date: Date.now()
+                })
+        });
+    }
 
   //set input values to state
   onChange = (e) => {
@@ -43,9 +57,12 @@ class CreateBlogPost extends Component {
     console.log(formData);
 
     axios
-      .post("http://localhost:8084/blogposts/create", formData)
+      .put(
+        `http://localhost:8084/blogposts/update/${this.props.match.params.id}`,
+        formData
+      )
       .then((response) => {
-        alert("Blog post Succesfully added");
+        alert("Blog post Succesfully updated");
 
         this.setState({
           title: "",
@@ -61,13 +78,12 @@ class CreateBlogPost extends Component {
   };
 
   render() {
-
     return (
       <div className="img-fluid">
         <Navbar />
 
         <div className="createContainer">
-          <p className="form-header">CREATE NEW BLOGPOST</p>
+          <p className="form-header">EDIT BLOGPOST</p>
           <form id="blogForm" onSubmit={this.onSubmit}>
             <div className="mb-3">
               <label for="exampleFormControlInput1" className="form-label">
@@ -108,7 +124,7 @@ class CreateBlogPost extends Component {
               <textarea
                 class="form-control"
                 id="exampleFormControlTextarea1"
-                rows="20"
+                rows="10"
                 name="bodyContent"
                 value={this.state.bodyContent}
                 onChange={this.onChange}
@@ -122,9 +138,7 @@ class CreateBlogPost extends Component {
           </form>
         </div>
         <Link to="/adminbloglist">
-        <button className="backbtn">
-          Back
-        </button>
+          <button className="backbtn">Back</button>
         </Link>
       </div>
     );

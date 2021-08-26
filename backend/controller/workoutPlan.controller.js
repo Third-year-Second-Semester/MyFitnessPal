@@ -4,7 +4,24 @@ const WorkOutPlanModel = require('../models/workoutPlan.model')
 //creating a workout plan
 const createWorkOutPlan = async function(req,res){
     if(req.body){
-        const workOutPlan =  WorkOutPlanModel(req.body);
+        const name = req.body.name;
+        const area = req.body.area;
+        const level = req.body.level;
+        const price = req.body.price;
+        const description = req.body.description;
+        const detailedDescription = req.body.detailedDescription;
+        const imgUrl = req.file.path;
+
+        const newBlogpost = {
+        name,
+        area,
+        level,
+        price,
+        description,
+        detailedDescription,
+        imgUrl
+        };
+        const workOutPlan =  WorkOutPlanModel(newBlogpost);
         try{
             let plans = await workOutPlan.save();
             res.status(200).send({result:plans})

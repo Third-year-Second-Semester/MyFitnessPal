@@ -11,7 +11,7 @@ export default function Home(props) {
 
       <div className="row insideContainer">
         <div className="col-4">
-          <Link to="">
+          <Link to="/workoutplan">
             <SinglItem name="Workout Management" img="Img1"></SinglItem>
           </Link>
         </div>
@@ -23,12 +23,12 @@ export default function Home(props) {
         </div>
 
         <div className="col-4">
-          <Link>
+          <Link to="/instructor">
             <SinglItem name="Instructor Management" img="Img3"></SinglItem>
           </Link>
         </div>
         <div className="col-4">
-          <Link>
+          <Link to="/adminbloglist">
             <SinglItem name="Health Blog Management" img="Img4"></SinglItem>
           </Link>
         </div>

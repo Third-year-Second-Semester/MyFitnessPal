@@ -1,0 +1,25 @@
+.blogtitle{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(13, 57, 139);
+}
+
+.blogimg{
+    width: 600px;
+    height: 400px;
+    margin-left: 200px;
+}
+
+.bodycontent{
+    width: 1000px;
+    padding: 20px;
+    height: 1000px;
+    font-size: 18px;
+}
+
+.date{
+    font-weight: bolder;
+    font-size: 12px;
+}
+

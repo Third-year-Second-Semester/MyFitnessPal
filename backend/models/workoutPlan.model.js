@@ -8,7 +8,7 @@ const workoutPlanSchema = mongoose.Schema({
     description:   String,
     detailedDescription: String,
     price: Number,
-    imgUrl: String,
+    imgUrl: {type:String} ,
     createdate: { type: Date, default: Date.now }
     
   });

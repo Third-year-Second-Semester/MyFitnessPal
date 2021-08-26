@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { confirmAlert } from 'react-confirm-alert';
 import './editInstructor.css';
 import NavBar from '../../NavBar/Navbar.component';
 
@@ -58,13 +59,33 @@ class editInstructor extends Component {
         console.log(Instructor);
         axios.put(`http://localhost:8081/instructor/update/${this.state.id}`, Instructor)
         .then(response =>{
-            alert('Instructor Details updated');
+            //alert('Instructor Details updated');
+            confirmAlert({
+                title: 'Instructor Details updated..!',
+                buttons: [
+                    {
+                        label: 'OK',
+                        onClick: () => window.location = `/instructor`
+                        
+                    }
+                ]
+            });
             console.log(this.state.id);
-            window.location = `/instructor`
+            //window.location = `/instructor`
         })
         .catch(error =>{
             console.log(error.message);
-            alert(error.message);
+            //alert(error.message);
+            confirmAlert({
+                title: 'Data Not Updated..!',
+                message: error.message,
+                buttons: [
+                    {
+                        label: 'OK',
+                        
+                    }
+                ]
+            });
         })
     }
 

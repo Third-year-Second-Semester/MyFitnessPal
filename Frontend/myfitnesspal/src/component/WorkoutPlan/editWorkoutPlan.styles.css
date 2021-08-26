@@ -1,0 +1,187 @@
+#eworkoutplan
+{
+	width:100%;
+	background-color:#fefffe;
+	opacity:0.9;
+	position: relative;
+	padding:40px 0px;
+	border-radius:15px;
+}
+
+.eworkplan-form
+{
+	text-align: center;
+	margin:60px 250px;
+	color:rgb(0, 0, 0);
+	font-size:130%;
+    
+}
+
+.ewPlan-inputBox
+{
+	width:75%;
+	padding:10px;
+	border-radius:8px;
+	font-size:100%;
+	
+}
+
+.ewPlan-inputBox1
+{
+	width:30%;
+	padding:10px;
+	border-radius:8px;
+	font-size:100%;
+	
+}
+
+.ewPlan-inputBox2
+{
+	width:30%;
+	padding:10px;
+	margin-left: 40px;
+	border-radius:8px;
+	font-size:100%;
+	
+}
+
+table{
+	margin-left: 50px;
+
+}
+
+.ewParea{
+	margin-left: 75px;
+}
+
+#ewPtext{
+	float: left;
+	padding-left: 40px;
+}
+
+label{
+	float: left;
+	padding-left: 40px;
+}
+
+.inputBoxTab
+{
+	width:400px;
+	padding:10px;
+	border-radius:8px;
+	font-size:100%;
+    margin-left: 30px;
+}
+
+#ewPlan-inputText
+{
+	width:75%;
+	padding:10px;
+	border-radius:8px;
+	font-size:100%;
+}
+
+#vt
+{
+	width:100px;
+	padding:10px;
+	border-radius:8px;
+	font-size:102%;
+}
+
+#saveButton
+{
+	width:120px;
+	padding:10px;
+	border-radius:5px;
+	outline: 10px;
+	background-color:#04c004;
+	border:1px solid rgb(45, 202, 6);
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+#saveButton:hover
+{
+	background-color:#09925e;
+	width:120px;
+}
+
+#bookButTab
+{
+	width:120px;
+	padding:10px;
+	border-radius:5px;
+    margin-left: 30px;
+	outline: 10px;
+	background-color:#090df8;
+	border:1px solid rgb(8, 51, 194);
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+#bookButTab:hover
+{
+	background-color:#095af0;
+	width:120px;
+}
+
+#cancelButton
+{
+	width:120px;
+	padding:10px;
+	border-radius:5px;
+    margin-left: 30px;
+	outline: 10px;
+	background-color:#e90000;
+	border:1px solid red;
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+#bookButTabC:hover
+{
+	background-color:#9e0a0a;
+	width:120px;
+}
+
+#imgButTab
+{
+	width:280px;
+	padding:5px;
+	border-radius:5px;
+    margin-left: 30px;
+	outline: 10px;
+	background-color:#ddc704;
+	border:1px solid rgb(191, 194, 8);
+	color:#ffffff;
+	font-size:20px;
+	cursor: pointer;
+}
+
+#imgButTab:hover
+{
+	background-color:#c2af03;
+	width:280px;
+}
+
+.eworkPlan-background
+{
+    background-image:url('../../images/workoutBgImg.jpg');
+    background-size: cover;
+   
+    height: 100%;
+    
+    overflow: hidden;
+	text-align: center;
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+      max-width: 1040px;
+    }
+  }

@@ -1,0 +1,36 @@
+.backStyleRepo
+{
+	text-align: center;
+}
+
+#repoBut
+{
+	width:250px;
+	padding:10px;
+	border-radius:5px;
+	margin-left: 30px;
+	outline: 10px;
+	background-color:#cc6709;
+	border:1px solid rgb(202, 133, 6);
+	color:#ffffff;
+	font-size:18px;
+	cursor: pointer;
+}
+
+#repoBut:hover
+{
+	background-color:#ccbf04;
+	width:250px;
+}
+
+.tableS{
+	width:30%;
+}
+
+.tableSt{
+	width:25%;
+}
+
+table {
+    width: 50% !important;
+}

@@ -16,7 +16,7 @@ class HomeInstructor extends Component {
         }
     }
 
-    
+
 
     componentDidMount() {
         axios.get('http://localhost:8081/instructor/')
@@ -52,6 +52,7 @@ class HomeInstructor extends Component {
         });
     }
 
+
     navigateEditPage(e, insID) {
         window.location = `/instructorEdit/${insID}`
     }
@@ -62,15 +63,17 @@ class HomeInstructor extends Component {
             <div className="clearfix">
                 <NavBar></NavBar>
                 <br></br>
-                
+
                 <h1 className="pagetitle">Manage Instructors</h1>
-                
+
                 <br></br>
                 <div className='homebackStyle'>
                     <Link to="/instructor/add">
                         <button className="addBut">+ Add New Instructor</button>
                     </Link>
+                    <Link to="/instructoReport">
                     <button className="repBut">Instructor Details Report</button>
+                    </Link>
                 </div>
                 <br></br>
                 <div className="row">
@@ -86,27 +89,27 @@ class HomeInstructor extends Component {
                                         />
                                     </div>
                                     <h3 className="card-title">
-                                    {data.name}</h3>
+                                        {data.name}</h3>
 
                                     <h5 className="card-title">
-                                    {data.category}
+                                        {data.category}
                                     </h5>
                                     <h6>
-                                    {data.email}
+                                        {data.email}
                                     </h6>
-                                    
-
-                                        <button className="UpdateBut" onClick={e => this.navigateEditPage(e, data._id)}>Edit</button> <button className="deleBut" onClick={e => this.DeleteKeynote(e, data._id)}>Delete</button>
-                                        
 
 
-                                    
+                                    <button className="UpdateBut" onClick={e => this.navigateEditPage(e, data._id)}>Edit</button> <button className="deleBut" onClick={e => this.DeleteKeynote(e, data._id)}>Delete</button>
+
+
+
+
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-                
+
             </div>
         );
     }

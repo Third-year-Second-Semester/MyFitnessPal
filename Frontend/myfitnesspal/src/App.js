@@ -17,6 +17,8 @@ import EditBlog from './component/BlogPost/admin/editBlog';
 import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
 import HomeInstructor from './component/Instructor/adminUI/homeInstructor';
 import EditInstructor from './component/Instructor/adminUI/editInstructor';
+import InstructorReport from "./component/Instructor/adminUI/instructorReport";
+
 import AddNewMeal from './component/MealPlan/addNewMeal.component'
 import ListAllMealPlans from './component/MealPlan/listAllMealPlans.component'
 
@@ -47,6 +49,7 @@ function App() {
 
           <Route path="/instructor/add" component={InstructorAdd}></Route>
           <Route path="/instructor" component={HomeInstructor}></Route>
+          <Route path="/instructoReport" component={InstructorReport}></Route>
           <Route path="/instructorEdit/:id" component={EditInstructor}></Route>
 
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>

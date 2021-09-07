@@ -38,7 +38,7 @@ class addInstructor extends Component {
          }
 
          if(typeof this.state.name !== "undefined"){
-            if(!this.state.name.match(/^[a-zA-Z]+$/)){
+            if(!this.state.name.match(/[a-zA-Z]+$/)){
                formIsValid = false;
                errors["name"] = "Only letters";
             }        

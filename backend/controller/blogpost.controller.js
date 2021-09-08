@@ -8,6 +8,7 @@ const createBlogPost = async (req, res) => {
     const bodyContent = req.body.bodyContent;
     const date = req.body.date;
     const image = req.file.path;
+    
 
     const newBlogpost = {
       title,

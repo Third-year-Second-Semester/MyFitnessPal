@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Navbar from '../../NavBar/Navbar.component';
 import './createBlog.css';
+import { confirmAlert } from 'react-confirm-alert';
 
  const initialState = {
    title: "",
@@ -45,7 +46,10 @@ class CreateBlogPost extends Component {
     axios
       .post("http://localhost:8084/blogposts/create", formData)
       .then((response) => {
-        alert("Blog post Succesfully added");
+        confirmAlert({
+          title: "Blog post Succesfully added",
+          buttons: [{ label: "OK" }],
+        });
 
         this.setState({
           title: "",

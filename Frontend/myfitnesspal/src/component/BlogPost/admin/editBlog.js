@@ -124,7 +124,7 @@ class CreateBlogPost extends Component {
               <textarea
                 class="form-control"
                 id="exampleFormControlTextarea1"
-                rows="10"
+                rows="20"
                 name="bodyContent"
                 value={this.state.bodyContent}
                 onChange={this.onChange}

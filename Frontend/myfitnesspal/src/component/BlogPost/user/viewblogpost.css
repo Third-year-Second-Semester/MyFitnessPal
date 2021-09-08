@@ -23,3 +23,47 @@
     font-size: 12px;
 }
 
+.commentsection{
+    width: 800px;
+    margin-left: 80px;
+    border-width: 5px;
+    border-color: blue;
+}
+
+.commentheader{
+    background-color: rgb(75, 201, 206);
+    border-color: crimson;
+    border-radius: 5px;
+    color: white;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+body{margin-top:20px;}
+
+.comment-wrapper .panel-body {
+    max-height:650px;
+    overflow:auto;
+}
+
+.comment-wrapper .media-list .media img {
+    width:64px;
+    height:64px;
+    border:2px solid #e5e7e8;
+}
+
+.comment-wrapper .media-list .media {
+    border-bottom:1px dashed #efefef;
+    margin-bottom:25px;
+}
+
+.text-muted{
+    
+}
+
+.right{
+    float: right;
+    size: 8px;
+}

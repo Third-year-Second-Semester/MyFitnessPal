@@ -10,7 +10,7 @@ class BlogsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      blogs: [],
+      blogs: []
     };
 
     this.handleDelete = this.handleDelete.bind(this);
@@ -40,8 +40,10 @@ class BlogsList extends Component {
             axios
               .delete(`http://localhost:8084/blogposts/delete/${id}`)
               .then((response) => {
-                //console.log(this.state.id);
-                alert("Blog post successfully deleted!!");
+                confirmAlert({
+                  title: "Blog post successfully deleted!!",
+                  buttons: [{ label: "OK" }],
+                });
 
               })
               .catch((error) => {

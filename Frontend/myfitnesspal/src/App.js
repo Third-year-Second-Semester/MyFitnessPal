@@ -6,7 +6,6 @@ import Home from "./component/AdminHome/adminhome.component";
 import MealPlan from "./component/MealPlan/MealPlan.component";
 
 import CreateBlogPost from "./component/BlogPost/admin/createBlogPost";
-//import CreateNew from "./component/BlogPost/admin/createNew";
 import BlogsList from "./component/BlogPost/admin/blogsList";
 import ViewAllBlogs from './component/BlogPost/user/viewAllBlogs';
 import ViewBlogPost from "./component/BlogPost/user/viewBlogpost";
@@ -22,6 +21,7 @@ import ManageWorkoutPlans from "./component/WorkoutPlan/workoutplanHome.componen
 import AddWorkoutPlan from './component/WorkoutPlan/addWorkoutPlan.component';
 import EditWorkoutPlan from "./component/WorkoutPlan/editWorkoutPlan.component";
 
+import CommentPanel from "./component/BlogPost/user/commentPanel";
 
 function App() {
   return (
@@ -45,6 +45,8 @@ function App() {
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>
           <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
+          
+          <Route path="/commentp" component={CommentPanel}></Route>
 
 
 

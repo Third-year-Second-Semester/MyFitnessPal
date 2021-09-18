@@ -13,11 +13,15 @@ import ViewBlogPost from "./component/BlogPost/user/viewBlogpost";
 import ViewABlog from './component/BlogPost/admin/viewablog';
 import EditBlog from './component/BlogPost/admin/editBlog';
 
-
+//Instructor admin side
 import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
 import HomeInstructor from './component/Instructor/adminUI/homeInstructor';
 import EditInstructor from './component/Instructor/adminUI/editInstructor';
 import InstructorReport from "./component/Instructor/adminUI/instructorReport";
+//Instructor user side
+import InstructorListUser from "./component/Instructor/UserUI/instructorAllList";
+import InstructorView from "./component/Instructor/UserUI/InstructorView";
+
 
 import AddNewMeal from './component/MealPlan/addNewMeal.component'
 import ListAllMealPlans from './component/MealPlan/listAllMealPlans.component'
@@ -47,10 +51,13 @@ function App() {
           <Route path="/editblog/:id" component={EditBlog}></Route>
           <Route path="/blog/:id" component={ViewBlogPost}></Route>
 
+          
           <Route path="/instructor/add" component={InstructorAdd}></Route>
           <Route path="/instructor" component={HomeInstructor}></Route>
           <Route path="/instructoReport" component={InstructorReport}></Route>
           <Route path="/instructorEdit/:id" component={EditInstructor}></Route>
+          <Route path="/instructorUser" component={InstructorListUser}></Route>
+          <Route path="/instructorView/:id" component={InstructorView}></Route>
 
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>

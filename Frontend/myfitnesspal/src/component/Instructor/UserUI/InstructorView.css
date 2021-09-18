@@ -1,0 +1,15 @@
+.iunstListImgHolder{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+.ivnstListItemContainer{
+    
+    margin-top: 4%;
+    width: 90%;
+    border: 0px solid rgb(8, 15, 8);
+    border-radius: 8px;
+    padding: 25px;
+
+}

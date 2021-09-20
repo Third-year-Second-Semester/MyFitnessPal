@@ -1,56 +1,64 @@
-import React, { useState } from "react";
+import React, { useState ,useRef} from "react";
 import NavBar from "../NavBar/Navbar.component";
 import SButton from "../Common/SButton.component";
 import CButton from "../Common/CButton.component";
-import axios from 'axios'
+import axios from "axios";
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button";
 
-function AddNewMealPlan() {
- 
+export default function AddNewMealPlan() {
+  
+
   const initalState = {
-    title: "",
-    description: "",
-    image: "",
+    title: null,
+    description: null,
+    image: null,
     totCal: "",
-    category: "",
-    meals: [ {breakfast: "", lunch: "", dinner: "", cal: "" } ,
-    {breakfast: "", lunch: "", dinner: "", cal: "" },
-    {breakfast: "", lunch: "", dinner: "", cal: "" },
-    {breakfast: "", lunch: "", dinner: "", cal: "" },
-    {breakfast: "", lunch: "", dinner: "", cal: "" },
-    {breakfast: "", lunch: "", dinner: "", cal: "" },
-    {breakfast: "", lunch: "", dinner: "", cal: "" }] ,
-    
+    category:null,
+    meals: [
+      { breakfast: "", lunch: "", dinner: "", cal: "" },
+      { breakfast: "", lunch: "", dinner: "", cal: "" },
+      { breakfast: "", lunch: "", dinner: "", cal: "" },
+      { breakfast: "", lunch: "", dinner: "", cal: "" },
+      { breakfast: "", lunch: "", dinner: "", cal: "" },
+      { breakfast: "", lunch: "", dinner: "", cal: "" },
+      { breakfast: "", lunch: "", dinner: "", cal: "" },
+    ],
   };
   const [mealPlan, setPlan] = useState(initalState);
 
-  const handleTitle = (e)=>{
-    let newPaln = {...mealPlan}
-    newPaln.title =  e.target.value
-    setPlan(newPaln)
-  }
 
-  const handleDescription = (e)=>{
-    let newPaln = {...mealPlan}
-    newPaln.description =  e.target.value
-    setPlan(newPaln)
+  const handleCancel = ()=>{
+    window.location="/addNewMeals"
   }
+  const handleTitle = (e) => {
+    let newPaln = { ...mealPlan };
+    newPaln.title = e.target.value;
+    setPlan(newPaln);
+  };
 
-  const handleCategory = (e)=>{
-    let newPaln = {...mealPlan}
-    newPaln.category =  e.target.value
-    setPlan(newPaln)
-  }
+  const handleDescription = (e) => {
+    let newPaln = { ...mealPlan };
+    newPaln.description = e.target.value;
+    setPlan(newPaln);
+  };
 
-  const handleImg = (e)=>{
-    let newPaln = {...mealPlan}
-    newPaln.image =  e.target.value
-    setPlan(newPaln)
-  }
+  const handleCategory = (e) => {
+    let newPaln = { ...mealPlan };
+    newPaln.category = e.target.value;
+    setPlan(newPaln);
+  };
 
+  const handleImg = (e) => {
+    let newPaln = { ...mealPlan };
+    newPaln.image = e.target.value;
+    setPlan(newPaln);
+  };
 
   const handleBreakfast = (e) => {
     let newMealPlan = { ...mealPlan };
-    
+
     switch (e.target.id) {
       case "d1b":
         newMealPlan.meals[0].breakfast = e.target.value;
@@ -78,15 +86,13 @@ function AddNewMealPlan() {
       default:
         break;
     }
- 
-     setPlan(newMealPlan)
+
+    setPlan(newMealPlan);
   };
-
-
 
   const handleLunch = (e) => {
     let newMealPlan = { ...mealPlan };
-    
+
     switch (e.target.id) {
       case "d1l":
         newMealPlan.meals[0].lunch = e.target.value;
@@ -114,14 +120,13 @@ function AddNewMealPlan() {
       default:
         break;
     }
- 
-     setPlan(newMealPlan)
-  };
 
+    setPlan(newMealPlan);
+  };
 
   const handleDinner = (e) => {
     let newMealPlan = { ...mealPlan };
-    
+
     switch (e.target.id) {
       case "d1d":
         newMealPlan.meals[0].dinner = e.target.value;
@@ -149,53 +154,68 @@ function AddNewMealPlan() {
       default:
         break;
     }
- 
-     setPlan(newMealPlan)
+
+    setPlan(newMealPlan);
   };
 
-
-  const hanldeSubmit = async ()=>{
-    alert('Hitted')
-    try{
-      await axios.post('http://localhost:8081/api/mealplans',mealPlan)
-    }catch(err){
-      console.log(err)
+  const hanldeSubmit = async () => {
+    alert("Meal Plan Added Successfull");
+    form.current.validateAll();
+    
+    try {
+      await axios.post("http://localhost:8081/api/mealplans", mealPlan);
+      window.location="/adminmeallist"
+    } catch (err) {
+      console.log(err);
     }
-  }
+  };
 
-  
+  const required = (value) => {
+    if (!value) {
+      return (
+        <div className="alert alert-danger" role="alert">
+          This field is required!
+        </div>
+      );
+    }
+}
+const form = useRef();
+const checkBtn = useRef();
+
 
   return (
     <div className="addNewMain">
       <NavBar></NavBar>
-      <form className="formContainer">
+      <Form className="formContainer" onSubmit={hanldeSubmit} ref={form}>
         <h3 className="formTitle">Create New Meal plan</h3>
         <div className="form-group formS">
           <label htmlFor="planName" className="dayHeading">
             Meal plan name
           </label>
-          <input
+          <Input
             type="text"
             className="form-control basicInput"
             id="planName"
             placeholder="7-Day Weight Gain"
+            validations={[required]}
             onChange={handleTitle}
-          />
+            required/>
+          <div className="invalid-feedback">Please provide a valid city.</div>
           <label htmlFor="planName" className="dayHeading">
             Description
           </label>
-          <input
+          <Input
             type="text"
             className="form-control basicInput"
             id="planName"
             placeholder="Description Here"
-            onChange = {handleDescription}
+            onChange={handleDescription}
           />
 
           <label htmlFor="planName" className="dayHeading">
             Category
           </label>
-          <input
+          <Input
             type="text"
             className="form-control basicInput"
             id="planName"
@@ -206,7 +226,7 @@ function AddNewMealPlan() {
           <label htmlFor="planName" className="dayHeading">
             Image
           </label>
-          <input
+          <Input
             type="text"
             className="form-control basicInput"
             id="planName"
@@ -223,17 +243,16 @@ function AddNewMealPlan() {
 
               <div className="row mb-2">
                 <div className="col">
-                  <input
+                  <Input
                     id="d1b"
                     type="text"
                     className="form-control"
                     placeholder="Breakfast"
                     onChange={handleBreakfast}
-                    
                   />
                 </div>
                 <div className="col">
-                  <input
+                  <Input
                     id="d1l"
                     type="text"
                     className="form-control"
@@ -242,7 +261,7 @@ function AddNewMealPlan() {
                   />
                 </div>
                 <div className="col">
-                  <input
+                  <Input
                     id="d1d"
                     type="text"
                     className="form-control"
@@ -251,16 +270,7 @@ function AddNewMealPlan() {
                   />
                 </div>
               </div>
-              <div className="row ">
-                <div className="col">
-                  <input
-                    id="d1tc"
-                    type="Number"
-                    className="form-control"
-                    placeholder="Total Calories"
-                  />
-                </div>
-              </div>
+            
             </div>
 
             <div id="day2" className="daySection">
@@ -270,8 +280,8 @@ function AddNewMealPlan() {
 
               <div className="row mb-2">
                 <div className="col">
-                  <input
-                  id="d2b"
+                  <Input
+                    id="d2b"
                     type="text"
                     className="form-control"
                     placeholder="Breakfast"
@@ -279,25 +289,21 @@ function AddNewMealPlan() {
                   />
                 </div>
                 <div className="col">
-                  <input id="d2l" type="text" className="form-control" placeholder="Lunch"
-                  onChange={handleLunch} />
+                  <Input
+                    id="d2l"
+                    type="text"
+                    className="form-control"
+                    placeholder="Lunch"
+                    onChange={handleLunch}
+                  />
                 </div>
                 <div className="col">
-                  <input
-                  id="d2d"
+                  <Input
+                    id="d2d"
                     type="text"
                     className="form-control"
                     placeholder="Dinner"
                     onChange={handleDinner}
-                  />
-                </div>
-              </div>
-              <div className="row ">
-                <div className="col">
-                  <input
-                    type="Number"
-                    className="form-control"
-                    placeholder="Total Calories"
                   />
                 </div>
               </div>
@@ -310,8 +316,8 @@ function AddNewMealPlan() {
 
               <div className="row mb-2">
                 <div className="col">
-                  <input
-                  id="d3b"
+                  <Input
+                    id="d3b"
                     type="text"
                     className="form-control"
                     placeholder="Breakfast"
@@ -319,25 +325,21 @@ function AddNewMealPlan() {
                   />
                 </div>
                 <div className="col">
-                  <input id="d3l"type="text" className="form-control" placeholder="Lunch"
-                  onChange={handleLunch} />
+                  <Input
+                    id="d3l"
+                    type="text"
+                    className="form-control"
+                    placeholder="Lunch"
+                    onChange={handleLunch}
+                  />
                 </div>
                 <div className="col">
-                  <input
+                  <Input
                     id="d3d"
                     type="text"
                     className="form-control"
                     placeholder="Dinner"
                     onChange={handleDinner}
-                  />
-                </div>
-              </div>
-              <div className="row ">
-                <div className="col">
-                  <input
-                    type="Number"
-                    className="form-control"
-                    placeholder="Total Calories"
                   />
                 </div>
               </div>
@@ -350,8 +352,8 @@ function AddNewMealPlan() {
 
               <div className="row mb-2">
                 <div className="col">
-                  <input
-                  id="d4b"
+                  <Input
+                    id="d4b"
                     type="text"
                     className="form-control"
                     placeholder="Breakfast"
@@ -359,25 +361,21 @@ function AddNewMealPlan() {
                   />
                 </div>
                 <div className="col">
-                  <input id="d4l" type="text" className="form-control" placeholder="Lunch"
-                  onChange={handleLunch} />
+                  <Input
+                    id="d4l"
+                    type="text"
+                    className="form-control"
+                    placeholder="Lunch"
+                    onChange={handleLunch}
+                  />
                 </div>
                 <div className="col">
-                  <input
+                  <Input
                     id="d4d"
                     type="text"
                     className="form-control"
                     placeholder="Dinner"
                     onChange={handleDinner}
-                  />
-                </div>
-              </div>
-              <div className="row ">
-                <div className="col">
-                  <input
-                    type="Number"
-                    className="form-control"
-                    placeholder="Total Calories"
                   />
                 </div>
               </div>
@@ -390,8 +388,8 @@ function AddNewMealPlan() {
 
               <div className="row mb-2">
                 <div className="col">
-                  <input
-                  id="d5b"
+                  <Input
+                    id="d5b"
                     type="text"
                     className="form-control"
                     placeholder="Breakfast"
@@ -399,25 +397,21 @@ function AddNewMealPlan() {
                   />
                 </div>
                 <div className="col">
-                  <input id="d5l" type="text" className="form-control" placeholder="Lunch"
-                  onChange={handleLunch} />
+                  <Input
+                    id="d5l"
+                    type="text"
+                    className="form-control"
+                    placeholder="Lunch"
+                    onChange={handleLunch}
+                  />
                 </div>
                 <div className="col">
-                  <input
+                  <Input
                     id="d4d"
                     type="text"
                     className="form-control"
                     placeholder="Dinner"
                     onChange={handleDinner}
-                  />
-                </div>
-              </div>
-              <div className="row ">
-                <div className="col">
-                  <input
-                    type="Number"
-                    className="form-control"
-                    placeholder="Total Calories"
                   />
                 </div>
               </div>
@@ -430,7 +424,7 @@ function AddNewMealPlan() {
 
               <div className="row mb-2">
                 <div className="col">
-                  <input
+                  <Input
                     id="d6b"
                     type="text"
                     className="form-control"
@@ -439,25 +433,21 @@ function AddNewMealPlan() {
                   />
                 </div>
                 <div className="col">
-                  <input id="d6l" type="text" className="form-control" placeholder="Lunch"
-                  onChange={handleLunch} />
+                  <Input
+                    id="d6l"
+                    type="text"
+                    className="form-control"
+                    placeholder="Lunch"
+                    onChange={handleLunch}
+                  />
                 </div>
                 <div className="col">
-                  <input
+                  <Input
                     id="d6d"
                     type="text"
                     className="form-control"
                     placeholder="Dinner"
                     onChange={handleDinner}
-                  />
-                </div>
-              </div>
-              <div className="row ">
-                <div className="col">
-                  <input
-                    type="Number"
-                    className="form-control"
-                    placeholder="Total Calories"
                   />
                 </div>
               </div>
@@ -470,8 +460,8 @@ function AddNewMealPlan() {
 
               <div className="row mb-2">
                 <div className="col">
-                  <input
-                  id="d7b"
+                  <Input
+                    id="d7b"
                     type="text"
                     className="form-control"
                     placeholder="Breakfast"
@@ -479,11 +469,16 @@ function AddNewMealPlan() {
                   />
                 </div>
                 <div className="col">
-                  <input id="d7l"type="text" className="form-control" placeholder="Lunch"
-                  onChange={handleLunch} />
+                  <Input
+                    id="d7l"
+                    type="text"
+                    className="form-control"
+                    placeholder="Lunch"
+                    onChange={handleLunch}
+                  />
                 </div>
                 <div className="col">
-                  <input 
+                  <Input
                     id="d7d"
                     type="text"
                     className="form-control"
@@ -492,26 +487,24 @@ function AddNewMealPlan() {
                   />
                 </div>
               </div>
-              <div className="row ">
-                <div className="col">
-                  <input
-                    type="Number"
-                    className="form-control"
-                    placeholder="Total Calories"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>
 
         <div className="row justify-content-center mt-5">
-          <SButton name="Add New" className="col me3" emitFunc={hanldeSubmit}></SButton>
-          <CButton name="Cancel"></CButton>
+        <CheckButton style={{ display: "none" }} ref={checkBtn} > What the hell </CheckButton>
+          <SButton
+            name="Add New"
+            className="col me3"
+            //emitFunc={hanldeSubmit}
+            type="submit"
+            ref={checkBtn}
+            
+          ></SButton>
+          <CButton name="Cancel" emitFunc={handleCancel}></CButton>
         </div>
-      </form>
+      </Form>
     </div>
   );
 }
 
-export default AddNewMealPlan;

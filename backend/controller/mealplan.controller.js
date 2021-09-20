@@ -54,6 +54,8 @@ const updateMealPlanById = async function(req,res){
     try{
         let meal = await MealPlanModel.findById(req.params.id)
         meal.title = req.body.title
+        meal.image =  req.body.image
+        meal.description = req.body.description
         meal.totCal =  req.body.totCal
         meal.category = req.body.category
         meal.meals = req.body.meals

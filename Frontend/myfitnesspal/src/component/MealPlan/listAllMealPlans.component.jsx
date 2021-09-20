@@ -29,7 +29,7 @@ const ListMealPlans = () => {
   return (
     <div className="listMealMain">
       <NavBar></NavBar>
-      <h3 className="formTitle">Admin Manage Meal Plans</h3>
+      <h3 className="formTitle"> Manage Meal Plans</h3>
       <div className="container">
           { 
             allItems ?

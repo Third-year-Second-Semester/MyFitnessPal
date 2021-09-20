@@ -1,0 +1,60 @@
+.usermealListItemContainer{
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: 'Arvo',sans-serif;
+    width: 100%;
+    margin-bottom: 10px;
+   
+
+}
+
+@media only screen and (max-width: 600px) {
+    .usermealListItemContainer{
+        margin-left: 10px;
+        margin-top: 10px;
+    
+    }
+    .MealLearnMoreButton{
+        margin: 0%;
+        
+    }
+}
+.userMealPlanTopic{
+
+    font-weight: bold;
+    font-size: 36px;
+
+}
+
+.userMealPlanDescription{
+    
+    font-size: 20px;
+
+}
+
+.userMealPlanButton{
+    float: right;
+
+}
+.MealLearnMoreButton{
+    font-size: 20px;
+    border: 2px solid black;
+    vertical-align: middle;
+    text-align: center;
+    width: 190px;
+    /* height: 50px; */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 8px;
+}
+
+.MealLearnMoreButton:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.userMealPlaneImageHolder{
+    width: 352px;
+    height: 244px;
+    border-radius: 8px;
+   
+}

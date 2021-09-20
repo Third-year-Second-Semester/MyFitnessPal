@@ -15,6 +15,7 @@ const ListMealPlans = () => {
     
                 let result = await axios.get('http://localhost:8081/api/mealplans')
                 setItem(result.data)
+                console.log(result.data)
                 
     
             }catch(err){
@@ -22,7 +23,7 @@ const ListMealPlans = () => {
             }
         }
         retriveAllMealPlans()
-    })
+    },[])
 
     
 

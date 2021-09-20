@@ -28,6 +28,7 @@ import EditWorkoutPlan from "./component/WorkoutPlan/editWorkoutPlan.component";
 import ListMealPlans from "./component/MealPlan/listAllMealPlans.component";
 
 import CommentPanel from "./component/BlogPost/user/commentPanel";
+import LoginPage from "./component/AdminLogin/loginPage";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
           <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
           
           <Route path="/commentp" component={CommentPanel}></Route>
+          <Route path="/adminlogin" component={LoginPage}></Route>
 
 
 

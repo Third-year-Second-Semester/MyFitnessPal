@@ -29,6 +29,7 @@ import ListMealPlans from "./component/MealPlan/listAllMealPlans.component";
 
 import CommentPanel from "./component/BlogPost/user/commentPanel";
 import LoginPage from "./component/AdminLogin/loginPage";
+import MealPlanuserPage from "./component/MealPlan/MealPlanuserPage";
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
           
           <Route path="/commentp" component={CommentPanel}></Route>
           <Route path="/adminlogin" component={LoginPage}></Route>
+          <Route path="/viewmeals" component={MealPlanuserPage}></Route>
 
 
 

@@ -69,7 +69,7 @@ class BlogsList extends Component {
             <button id="addbtn">Add New Blog Post</button>
           </Link>
 
-          <Link>
+          <Link to="/blog/report">
             <button id="generatebtn">Generate Blogs Details Report</button>
           </Link>
 

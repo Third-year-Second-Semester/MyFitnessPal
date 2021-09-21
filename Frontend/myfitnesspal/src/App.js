@@ -13,7 +13,6 @@ import ViewABlog from './component/BlogPost/admin/viewablog';
 import EditBlog from './component/BlogPost/admin/editBlog';
 import BlogReport from './component/BlogPost/admin/blogpostReport';
 
-
 import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
 import HomeInstructor from './component/Instructor/adminUI/homeInstructor';
 import EditInstructor from './component/Instructor/adminUI/editInstructor';

@@ -19,12 +19,18 @@ import EditInstructor from './component/Instructor/adminUI/editInstructor';
 import InstructorReport from "./component/Instructor/adminUI/instructorReport";
 
 import AddNewMeal from './component/MealPlan/addNewMeal.component'
-import ListAllMealPlans from './component/MealPlan/listAllMealPlans.component'
+import EditMealPlan from "./component/MealPlan/editMeal.component";
+import ViewMealPlan from "./component/MealPlan/viewMealPaln.component";
 
 import ManageWorkoutPlans from "./component/WorkoutPlan/workoutplanHome.component";
 import AddWorkoutPlan from './component/WorkoutPlan/addWorkoutPlan.component';
 import EditWorkoutPlan from "./component/WorkoutPlan/editWorkoutPlan.component";
 import ListMealPlans from "./component/MealPlan/listAllMealPlans.component";
+
+
+import LoginPage from "./component/AdminLogin/loginPage";
+import MealPlanuserPage from "./component/MealPlan/MealPlanuserPage";
+
 
 function App() {
   return (
@@ -34,6 +40,8 @@ function App() {
           <Route exact path="/" component={Home}></Route>
           <Route path="/adminmeals" component={MealPlan}></Route>
           <Route path="/adminmeallist" component={ListMealPlans}></Route>
+          <Route path="/adminmealupdate/:id" component={EditMealPlan}></Route>
+          <Route path="/mealdetail/:id" component={ViewMealPlan}></Route>
 
           <Route path="/addNewMeals" component={AddNewMeal}></Route>
 
@@ -54,6 +62,12 @@ function App() {
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>
           <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
+
+          <Route path="/adminlogin" component={LoginPage}></Route>
+          <Route path="/viewmeals" component={MealPlanuserPage}></Route>
+
+
+
 
         </Switch>
       </Router>

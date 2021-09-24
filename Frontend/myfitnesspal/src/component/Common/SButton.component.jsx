@@ -5,7 +5,10 @@ export default function Button(props){
     return(
          <button className="successButton" ><span className="buttonName" onClick={(e)=>{
              e.preventDefault()
-             props.emitFunc()
-         }} >{props.name}</span></button>
+             if(props.emitFunc !== undefined){
+                props.emitFunc()
+             }
+             
+         }} type="submit" >{props.name}</span></button>
    )
 }

@@ -177,7 +177,7 @@ class ViewBlogPost extends Component {
                 POST
               </button>
             </form>
-            <br/>
+            <br />
             <div class="alert alert-info" role="alert">
               {this.state.alertMsg}
             </div>

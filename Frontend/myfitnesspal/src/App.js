@@ -11,7 +11,7 @@ import ViewAllBlogs from './component/BlogPost/user/viewAllBlogs';
 import ViewBlogPost from "./component/BlogPost/user/viewBlogpost";
 import ViewABlog from './component/BlogPost/admin/viewablog';
 import EditBlog from './component/BlogPost/admin/editBlog';
-
+import BlogReport from './component/BlogPost/admin/blogpostReport';
 
 import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
 import HomeInstructor from './component/Instructor/adminUI/homeInstructor';
@@ -27,9 +27,10 @@ import AddWorkoutPlan from './component/WorkoutPlan/addWorkoutPlan.component';
 import EditWorkoutPlan from "./component/WorkoutPlan/editWorkoutPlan.component";
 import ListMealPlans from "./component/MealPlan/listAllMealPlans.component";
 
-import CommentPanel from "./component/BlogPost/user/commentPanel";
+
 import LoginPage from "./component/AdminLogin/loginPage";
 import MealPlanuserPage from "./component/MealPlan/MealPlanuserPage";
+
 
 function App() {
   return (
@@ -44,13 +45,14 @@ function App() {
 
           <Route path="/addNewMeals" component={AddNewMeal}></Route>
 
-
           <Route path="/blogpost/create" component={CreateBlogPost}></Route>
           <Route path="/adminbloglist" component={BlogsList}></Route>
           <Route path="/adminviewblog/:id" component={ViewABlog}></Route>
           <Route path="/viewallblogs" component={ViewAllBlogs}></Route>
           <Route path="/editblog/:id" component={EditBlog}></Route>
+          <Route path="/blog/report" component={BlogReport}></Route>          
           <Route path="/blog/:id" component={ViewBlogPost}></Route>
+
 
           <Route path="/instructor/add" component={InstructorAdd}></Route>
           <Route path="/instructor" component={HomeInstructor}></Route>
@@ -60,10 +62,10 @@ function App() {
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>
           <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
-          
-          <Route path="/commentp" component={CommentPanel}></Route>
+
           <Route path="/adminlogin" component={LoginPage}></Route>
           <Route path="/viewmeals" component={MealPlanuserPage}></Route>
+
 
 
 

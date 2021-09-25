@@ -13,10 +13,15 @@ import ViewABlog from './component/BlogPost/admin/viewablog';
 import EditBlog from './component/BlogPost/admin/editBlog';
 import BlogReport from './component/BlogPost/admin/blogpostReport';
 
+//Instructor admin side
 import InstructorAdd from "./component/Instructor/adminUI/addInstructor";
 import HomeInstructor from './component/Instructor/adminUI/homeInstructor';
 import EditInstructor from './component/Instructor/adminUI/editInstructor';
 import InstructorReport from "./component/Instructor/adminUI/instructorReport";
+//Instructor user side
+import InstructorListUser from "./component/Instructor/UserUI/instructorAllList";
+import InstructorView from "./component/Instructor/UserUI/InstructorView";
+
 
 import AddNewMeal from './component/MealPlan/addNewMeal.component'
 import EditMealPlan from "./component/MealPlan/editMeal.component";
@@ -58,6 +63,8 @@ function App() {
           <Route path="/instructor" component={HomeInstructor}></Route>
           <Route path="/instructoReport" component={InstructorReport}></Route>
           <Route path="/instructorEdit/:id" component={EditInstructor}></Route>
+          <Route path="/instructorUser" component={InstructorListUser}></Route>
+          <Route path="/instructorView/:id" component={InstructorView}></Route>
 
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>

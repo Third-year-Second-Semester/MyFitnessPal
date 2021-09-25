@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavBar from '../../NavBar/Navbar.component';
+import UNavBar from '../../UserNavBar/UserNavBar';
 import "./InstructorView.css";
 import axios from "axios";
 
@@ -44,8 +44,8 @@ class InstructorView extends Component {
     render() {
         return (
             <div>
-                <NavBar></NavBar><br></br><br></br>
-
+                <UNavBar></UNavBar><br></br><br></br>
+                
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-5 ">
@@ -54,6 +54,7 @@ class InstructorView extends Component {
                                 src={`http://localhost:8081/${this.state.image}`}
                                 alt=""
                             />
+                
                         </div>
                         <div className="col-sm-6">
                             <br></br><br></br>

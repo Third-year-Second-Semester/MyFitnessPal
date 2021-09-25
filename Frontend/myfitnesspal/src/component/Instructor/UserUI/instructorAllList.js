@@ -35,7 +35,7 @@ class InstructorAllList extends Component {
                     <div className="row">
                         {this.state.data.map(data => (
 
-                            <Item name={data.name} category={data.category} introduction={data.introduction} img={`http://localhost:8081/${data.image}`} key={data.id} itemId={data.id}></Item>
+                            <Item name={data.name} category={data.category} introduction={data.introduction} img={`http://localhost:8081/${data.image}`} key={data.id} itemId={data._id}></Item>
 
                         ))}
                     </div>

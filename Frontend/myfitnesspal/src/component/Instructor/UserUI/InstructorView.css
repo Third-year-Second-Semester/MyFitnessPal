@@ -13,3 +13,13 @@
     padding: 25px;
 
 }
+
+.conPara{
+    font-size:18px;
+}
+
+
+.disPara{
+    font-size:20px;
+    text-align: justify;
+}

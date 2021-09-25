@@ -56,6 +56,7 @@ class InstructorView extends Component {
                             />
                         </div>
                         <div className="col-sm-6">
+                            <br></br><br></br>
                             <h3 className="ilistTitle">{this.state.name}</h3>
                             <h5>{this.state.category}</h5>
                             <div className="iItemDesc">
@@ -64,7 +65,7 @@ class InstructorView extends Component {
                                 </p>
 
                             </div>
-                            <p>Contact Me: {this.state.email}</p>
+                            <p className="conPara">Contact Me: <b>{this.state.email}</b></p>
 
 
                         </div>
@@ -72,7 +73,7 @@ class InstructorView extends Component {
                     </div>
 
                     <br></br>
-                    <p>{this.state.discription}</p>
+                    <p className="disPara">{this.state.discription}</p>
                 </div>
                 
             </div>

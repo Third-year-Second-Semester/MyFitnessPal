@@ -8,7 +8,7 @@ const createBlogPost = async (req, res) => {
     const bodyContent = req.body.bodyContent;
     const date = req.body.date;
     const image = req.file.path;
-
+    
     const newBlogpost = {
       title,
       bodyContent,
@@ -52,9 +52,49 @@ const getaBlogPost = async (req, res) => {
 };
 
 // update a blogpost
-const updateBlogPost = async (req, res) => {
+const updateBlogPost = async  (req, res) => {
   if (req.params && req.params.id) {
-    await BlogPost.findByIdAndUpdate(req.params.id,{ $set: req.body },{ new: true })
+
+    // const title = req.body.title;
+    // const bodyContent = req.body.bodyContent;
+    // const date = req.body.date;
+    // const image = "";
+
+    //  BlogPost.findById(req.params.id, (err, blogpost) => {
+
+    //   if (err) {
+    //     res.send(err);
+    //   }
+
+    //   blogpost.title = req.body.title;
+    //   blogpost.bodyContent = req.body.bodyContent;
+    //   blogpost.date = req.body.date;
+    //   blogpost.image = req.file.path;
+
+    //    blogpost
+    //     .save()
+    //     .then((data) => {
+    //       res.status(200).send({ data: data });
+    //     })
+    //     .catch((error) => {
+    //       res.status(500).send({ error: error.message });
+    //     });
+    
+    //  });
+    
+    //console.log(blogpost.title);
+
+    // blogpost = {
+    //   title,
+    //   bodyContent,
+    //   date,
+    //   image
+    // };
+
+    //console.log(blogpost.title);
+
+
+    await BlogPost.findByIdAndUpdate(req.params.id,{ $set: req.body })
       .then((response) => {
         res.status(200).send({ data: response });
       })

@@ -23,3 +23,34 @@
     font-size: 12px;
 }
 
+.commentsection{
+    width: 800px;
+    margin-left: 80px;
+    border-width: 5px;
+    border-color: blue;
+}
+
+.commentheader{
+    background-color: rgb(75, 201, 206);
+    border-color: crimson;
+    border-radius: 5px;
+    color: white;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.text-muted{
+    color: lightslategray;
+}
+
+.right{
+    float: right;
+    size: 8px;
+}
+
+
+.btnset{
+    float: right;
+}

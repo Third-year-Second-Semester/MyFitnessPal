@@ -34,3 +34,59 @@
 #generatebtn:hover{
     background-color: rgb(12, 126, 73);;
 }
+
+
+
+#tb-row{
+    border-color: blue;
+
+}
+
+#row{
+    width: 800px;
+}
+
+.reporttitle{
+    text-align: center;
+    font-size: 50px;
+    color: teal;
+    font-weight: bold;
+}
+
+
+.table{
+    width: 90% !important;
+    border-color: chocolate;
+    border-width: 4px double black;
+}
+
+#my-table{
+    margin-left: 100px;
+    background-color: bisque;
+    size: 400px;
+    
+}
+
+/*.container{
+    background-color: rgb(207, 207, 200);
+}
+ 
+ #reportback{
+    background-image: url('./createbackground.jpg');
+    background-size: 100%;
+    
+} */
+
+/*
+#reportback:hover{
+    opacity: 1.0;
+} */
+
+.reportbtn{
+    border-radius: 8px;
+    padding: 10px;
+    font-size: large;
+    background-color: slateblue;
+    margin-left: 350px;
+    margin-bottom: 30px;
+}

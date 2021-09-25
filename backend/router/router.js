@@ -6,11 +6,12 @@ const fileUpload = require("../MiddlewearBlogpost/blogpostImageupload");
 
 let workoutPlanController = require("../controller/workoutPlan.controller");
 const workoutPlanFileUpload = require("../middlewareWorkoutPlan/workoutPlanFileUpload");
+let authController =  require("../controller/auth.controller")
+const authMiddleware =  require("../utils/authMiddleware")
 
 
 
-
-router.get("/",(req,res)=>{
+router.get("/",authMiddleware,(req,res)=>{
     res.send("API is working")
 })
 
@@ -55,5 +56,9 @@ router.route("/workoutplans/:id").get(workoutPlanController.getWorkoutPlan)
 router.route("/workoutplans/:id").put(workoutPlanController.updateWorkOutPlan)
 router.route("/workoutplans/:id").delete(workoutPlanController.deleteWorkoutPlan)
 
+
+
+router.route("/auth/signup").post(authController.signUp);
+router.route("/auth/signin").post(authController.signIn);
 
 module.exports = router

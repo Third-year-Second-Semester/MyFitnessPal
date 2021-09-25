@@ -18,6 +18,11 @@
     
 }
 
-.btn{
-    margin-right: 20px;
+.searchbar{
+    border-color: rgb(39, 17, 165);
+    border-width: 2px;
 }
+
+/* .btn{
+    margin-right: 20px;
+} */

@@ -3,9 +3,12 @@ import React from 'react'
 export default function CButton(props){
 
     return(
-        <button className="cancelButton" ><span className="buttonName" onClick={(e)=>{
+        <button className="cancelButton"  onClick={(e)=>{
             e.preventDefault()
-            props.emitFunc()
-        }} >{props.name}</span></button>
+            if(props.emitFunc !== undefined){
+               props.emitFunc()
+            }
+            
+        }}  ><span className="buttonName"  >{props.name}</span></button>
     )
 }

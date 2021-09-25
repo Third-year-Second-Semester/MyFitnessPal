@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "../../NavBar/Navbar.component";
 import "./createBlog.css";
+import { confirmAlert } from "react-confirm-alert";
 
 const blog = {
   title: "",
@@ -26,12 +27,16 @@ class CreateBlogPost extends Component {
             .then(response => {
                 console.log(response.data.data);
                 const newBlog = response.data.data;
+                console.log("Image = " + newBlog.image.substr(21,42));
 
-                this.setState({
-                    title: newBlog.title,
-                    bodyContent: newBlog.bodyContent,
-                    date: Date.now()
-                })
+              this.setState({
+                title: newBlog.title,
+                bodyContent: newBlog.bodyContent,
+                date: Date.now(),
+                image: ""
+              });
+
+              
         });
     }
 
@@ -62,7 +67,12 @@ class CreateBlogPost extends Component {
         formData
       )
       .then((response) => {
-        alert("Blog post Succesfully updated");
+         confirmAlert({
+           title: "Blog post Succesfully updated",
+           buttons: [{ label: "OK" }],
+         });
+
+        //alert("Blog post Succesfully updated");
 
         this.setState({
           title: "",
@@ -124,7 +134,7 @@ class CreateBlogPost extends Component {
               <textarea
                 class="form-control"
                 id="exampleFormControlTextarea1"
-                rows="10"
+                rows="20"
                 name="bodyContent"
                 value={this.state.bodyContent}
                 onChange={this.onChange}

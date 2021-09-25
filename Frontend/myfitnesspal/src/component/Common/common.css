@@ -3,7 +3,7 @@
     height: max-content;
     font-size: large;
     background-color: #155ECB;
-    border: none;
+    border: 2px solid #155ECB ;
     border-radius: 12px;
     text-align: center;
     font-weight: bold;
@@ -23,8 +23,9 @@
     height: max-content;
     font-size: large;
     background-color: #C01649;
-  border: none;
+  border: 2px solid #C01649 ;
     border-radius: 12px;
+    
     text-align: center;
     font-weight: bold;
     color: white;
@@ -38,7 +39,15 @@
 
 .successButton:hover{
     border: solid rgb(8, 0, 65) 2px ;
+    border-style: groove;
 }
 .cancelButton:hover{
     border: solid rgb(8, 0, 65) 2px ;
+}
+.spinnerContainer{
+    /* margin: auto; */
+    width: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }

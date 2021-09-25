@@ -78,3 +78,44 @@ body,html{
    
 }
 
+.mealcover{
+    background-image: url('../../images/cover.jpg');
+    height: 400px;
+    background-size: cover;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.coverTitle{
+
+   color: white;
+   font-family: Arvo;
+   font-size: 40px;
+}
+.singleViewItem{
+    background-color:#e0dfdf ;
+    height: 200px;
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    border:1px solid black;
+    padding: 20px;
+    
+}
+.singleViewItem h6{
+ color: green;
+}
+.mealrowContainer{
+    padding: 7px;
+    margin-left: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+.mealDate{
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.userMealListContainer{
+    margin: 0%;
+  
+}

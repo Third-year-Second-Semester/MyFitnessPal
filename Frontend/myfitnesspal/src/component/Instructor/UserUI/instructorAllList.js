@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavBar from '../../NavBar/Navbar.component';
+import UNavBar from '../../UserNavBar/UserNavBar';
 import "./instrucUser.css";
 import Item from "./instructorListCard";
 import axios from "axios";
@@ -26,7 +26,7 @@ class InstructorAllList extends Component {
     render() {
         return (
             <div className="ilistMealMain">
-                <NavBar></NavBar><br></br>
+                <UNavBar></UNavBar><br></br>
                 <center>
                     <h1 >Instructors</h1>
                 </center>
@@ -37,7 +37,7 @@ class InstructorAllList extends Component {
 
                             <Item name={data.name} category={data.category} introduction={data.introduction} img={`http://localhost:8081/${data.image}`} key={data.id} itemId={data._id}></Item>
 
-                        ))}
+                        )) }
                     </div>
 
                 </div>

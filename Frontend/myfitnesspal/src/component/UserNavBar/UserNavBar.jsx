@@ -24,7 +24,7 @@ export default function UserNavBar(){
                         <SingleLink name="Meal Plan" link="/viewmeals"/>
                     </li>
                     <li className="nav-item">
-                        <SingleLink name="Instructors" link="/"/>
+                        <SingleLink name="Instructors" link="/instructorUser"/>
                     </li>
                     <li className="nav-item">
 

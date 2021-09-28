@@ -18,7 +18,7 @@ export default function MealPlan(props) {
       <Link className="col-4" to="adminmeallist">
         <SingleItme name="View Meal Plan List" img="Img8" ></SingleItme>
       </Link>
-      <Link className="col-4" to="">
+      <Link className="col-4" to="/mealreport">
         <SingleItme name="View Delivery List" img="Img9" ></SingleItme>
       </Link>
     </div>

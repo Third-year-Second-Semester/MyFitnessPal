@@ -35,6 +35,8 @@ import ListMealPlans from "./component/MealPlan/listAllMealPlans.component";
 
 import LoginPage from "./component/AdminLogin/loginPage";
 import MealPlanuserPage from "./component/MealPlan/MealPlanuserPage";
+import RegisterForMealPlane from "./component/MealPlan/registerForMealPlan.component";
+import viewMealPlanRegistrations from "./component/MealPlan/viewMealPlanRegistrations";
 
 
 function App() {
@@ -47,9 +49,11 @@ function App() {
           <Route path="/adminmeallist" component={ListMealPlans}></Route>
           <Route path="/adminmealupdate/:id" component={EditMealPlan}></Route>
           <Route path="/mealdetail/:id" component={ViewMealPlan}></Route>
-
           <Route path="/addNewMeals" component={AddNewMeal}></Route>
-
+          <Route path="/regMeals/:id" component={RegisterForMealPlane}></Route>
+          <Route path="/viewmeals" component={MealPlanuserPage}></Route>
+          <Route path="/mealreport" component={viewMealPlanRegistrations}></Route>
+        
           <Route path="/blogpost/create" component={CreateBlogPost}></Route>
           <Route path="/adminbloglist" component={BlogsList}></Route>
           <Route path="/adminviewblog/:id" component={ViewABlog}></Route>
@@ -69,12 +73,9 @@ function App() {
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>
           <Route path="/workoutplan" component={ManageWorkoutPlans}></Route>
-
           <Route path="/adminlogin" component={LoginPage}></Route>
-          <Route path="/viewmeals" component={MealPlanuserPage}></Route>
-
-
-
+        
+          
 
         </Switch>
       </Router>

@@ -84,6 +84,14 @@ const registerForMealPlan = async function (req, res) {
     
   }
 };
+const getAllMealRegistrations = async function (req, res) {
+  try {
+    let results = await MealPlanRegistraionModel.find({}).populate('mealPlanId','title');
+    res.status(200).send(results);
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+};
 
 function isEmpty(obj) {
     for(var prop in obj) {
@@ -98,5 +106,6 @@ module.exports = {
   getMealPlanById,
   deleteMealPlanById,
   updateMealPlanById,
-  registerForMealPlan
+  registerForMealPlan,
+  getAllMealRegistrations
 };

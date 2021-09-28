@@ -21,7 +21,8 @@ import InstructorReport from "./component/Instructor/adminUI/instructorReport";
 //Instructor user side
 import InstructorListUser from "./component/Instructor/UserUI/instructorAllList";
 import InstructorView from "./component/Instructor/UserUI/InstructorView";
-
+//HomePage
+import HomePage from "./component/userHome/userHome";
 
 import AddNewMeal from './component/MealPlan/addNewMeal.component'
 import EditMealPlan from "./component/MealPlan/editMeal.component";
@@ -65,6 +66,8 @@ function App() {
           <Route path="/instructorEdit/:id" component={EditInstructor}></Route>
           <Route path="/instructorUser" component={InstructorListUser}></Route>
           <Route path="/instructorView/:id" component={InstructorView}></Route>
+
+          <Route path="/UserHome" component={HomePage}></Route>
 
           <Route path="/workoutplan/add" component={AddWorkoutPlan}></Route>
           <Route path="/workoutplan/:id" component={EditWorkoutPlan}></Route>

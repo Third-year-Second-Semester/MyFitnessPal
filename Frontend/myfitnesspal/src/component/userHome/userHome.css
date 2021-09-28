@@ -1,0 +1,55 @@
+.font{
+    font-family: Arvo;
+}
+
+.gallery {
+    border: 1px solid rgba(221, 221, 221, 0);
+  }
+  
+.gallery:hover {
+    border: 1px solid rgba(119, 119, 119, 0);
+    border-radius: 50px;
+    box-shadow: 1px 1px 2px 1px rgba(0, 22, 54, 0.911);
+  }
+  
+.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .desc {
+    padding: 10px;
+    text-align: left;
+    color: black;
+  }
+
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .responsive {
+    padding: 0 10px;
+    float: left;
+    width: 24.99999%;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+ 
+
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

@@ -3,39 +3,41 @@ const mongoose = require("mongoose");
 const MealSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    required: true,
+    //required: true,
   },
   lastName: {
     type: String,
-    required: true,
+    //required: true,
   },
   email: {
     type: String,
-    required: true,
+    //required: true,
   },
   mobile: {
     type: String,
-    required: true,
+    //required: true,
   },
   address: {
     type: String,
-    required: true,
+    //required: true,
   },
   cardNo: {
     type: String,
-    required: true,
+    //required: true,
   },
   expDate: {
     type: String,
-    required: true,
+    //required: true,
   },
   cvv: {
     type: String,
     required: true,
   },
   mealPlanId: {
+
     type: mongoose.Schema.Types.ObjectId, 
     ref: 'MealModel'
+
   },
 });
 

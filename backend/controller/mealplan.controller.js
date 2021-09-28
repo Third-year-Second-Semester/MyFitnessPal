@@ -70,14 +70,14 @@ const registerForMealPlan = async function (req, res) {
   if (!isEmpty(req.body)) {
    
     const mealPlanRegistration = MealPlanRegistraionModel(req.body);
-
+    console.log(req.body)
     try {
       let result = await mealPlanRegistration.save();
       res.status(200).send({ result: result });
     } catch (err) {
         //console.log('Here')
         //console.log()
-        res.status(500).send({  err })
+        res.status(500).send({ Error:err.message })
     }
   } else {
     res.status(204).send({ error: "No Content" });

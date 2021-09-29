@@ -2,9 +2,11 @@ import axios from "axios";
 import { Button } from "bootstrap";
 import React, { Component } from "react";
 import Navbar from "../../NavBar/Navbar.component";
-import "./viewblogpost.css";
+import "../user/viewblogpost.css";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
-class ViewBlogPost extends Component {
+class ViewBlogAdmin extends Component {
   constructor(props) {
     super(props);
     this.commentSubmit = this.commentSubmit.bind(this);
@@ -20,7 +22,7 @@ class ViewBlogPost extends Component {
       email: "",
       comment: "",
       posteddate: "",
-      alertMsg: ""
+      alertMsg: "",
     };
   }
 
@@ -57,44 +59,69 @@ class ViewBlogPost extends Component {
       )
       .then((response) => {
         this.setState({ comments: response.data.data });
-        
       });
-    
+  }
+
+  handleDelete(id) {
+    confirmAlert({
+      title: "Confirm to Delete",
+      message: "Are you sure to delete this blog post..?",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () =>
+            axios
+              .delete(`http://localhost:8084/blogposts/delete/${id}`)
+              .then((response) => {
+                confirmAlert({
+                  title: "Blog post successfully deleted!!",
+                  buttons: [{ label: "OK" }],
+                });
+
+                window.location = "../adminbloglist";
+              })
+              .catch((error) => {
+                alert(error.message);
+              }),
+        },
+        {
+          label: "No",
+        },
+      ],
+    });
   }
 
   //===================================================================================================================
   commentSubmit = (e) => {
     e.preventDefault();
 
-      let newComment = {
-        blogid: this.props.match.params.id,
-        username: this.state.username,
-        email: this.state.email,
-        comment: this.state.comment,
-        posteddate: Date.now(),
-      };
+    let newComment = {
+      blogid: this.props.match.params.id,
+      username: this.state.username,
+      email: this.state.email,
+      comment: this.state.comment,
+      posteddate: Date.now(),
+    };
 
-      axios
-        .post("http://localhost:8084/blogposts/save", newComment)
-        .then((response) => {
-          console.log("data  "+response.data);
-          if (response.data == null) {
-            this.setState({ alertMsg: "Username is already existing" });
-          } else {
-            this.setState({alertMsg: "Comment is posted!!"})
-          }
-          
-        })
-        .catch(err => {
-          alert("error = "+err);
-        });
+    axios
+      .post("http://localhost:8084/blogposts/save", newComment)
+      .then((response) => {
+        console.log("data  " + response.data);
+        if (response.data == null) {
+          this.setState({ alertMsg: "Username is already existing" });
+        } else {
+          this.setState({ alertMsg: "Comment is posted!!" });
+        }
+      })
+      .catch((err) => {
+        alert("error = " + err);
+      });
 
     // if (this.state.allComments.username != this.state.username) {
-      
+
     // } else {
     //   alert("This username has been used already!!");
     // }
-
   };
   //=========================================================================================================================
 
@@ -128,59 +155,7 @@ class ViewBlogPost extends Component {
 
           <div className="commentsection">
             <div className="commentheader">Comment Section</div>
-            <br />
-            <form onSubmit={this.commentSubmit}>
-              <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
-                  Name:
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Enter Name"
-                  name="username"
-                  value={this.state.username}
-                  onChange={this.onChange}
-                  required
-                />
-              </div>
 
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">
-                  Email:
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">
-                  Comment
-                </label>
-                <textarea
-                  name="comment"
-                  value={this.state.comment}
-                  onChange={this.onChange}
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                ></textarea>
-              </div>
-              <button type="submit" className="btn btn-primary">
-                POST
-              </button>
-            </form>
-            <br />
-            <div class="alert alert-info" role="alert">
-              {this.state.alertMsg}
-            </div>
             <br />
 
             <div>
@@ -207,10 +182,34 @@ class ViewBlogPost extends Component {
                 ))}
             </div>
           </div>
+
+          <div className="btnset">
+            <a
+              href={`/editblog/${this.state.blogs._id}`}
+              className="btn btn-success"
+            >
+              EDIT
+            </a>
+
+            {"  "}
+
+            <button
+              //href={`/deleteblog/${blogs._id}`}
+              type="button"
+              className="btn btn-danger"
+              onClick={() => {
+                this.handleDelete(this.state.blogs._id);
+              }}
+            >
+              DELETE
+            </button>
+            <br />
+            <br />
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default ViewBlogPost;
+export default ViewBlogAdmin;

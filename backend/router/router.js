@@ -27,6 +27,8 @@ router.route("/mealplans").get(mealPlanController.getAllMealPlans)
 router.route("/mealplans/:id").get(mealPlanController.getMealPlanById)
 router.route("/mealplans/:id").delete(mealPlanController.deleteMealPlanById)
 router.route("/mealplans/:id").put(mealPlanController.updateMealPlanById)
+router.route("/mealregistrations").get(mealPlanController.getAllMealRegistrations)
+router.route("/mealplans/reg").post(mealPlanController.registerForMealPlan)
 
 
 

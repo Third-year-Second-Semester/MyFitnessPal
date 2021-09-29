@@ -44,8 +44,10 @@ class InstructorReport extends Component {
             <div>
                 <NavBar></NavBar>
                 <div id="content">
-
+                    <br></br>
+                    <center>
                     <h2>Instructor Details Report</h2>
+                    </center>
                     <br></br>
 
 

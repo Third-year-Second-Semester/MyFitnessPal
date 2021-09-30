@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import UserNavBar from '../../UserNavBar/UserNavBar';
 import axios from 'axios';
-import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import './userHomeWP.styles.css';
 
@@ -10,6 +8,7 @@ class WorkoutPlansHome extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            filteredData: [],
             data: []
         }
     }
@@ -17,7 +16,9 @@ class WorkoutPlansHome extends Component {
     componentDidMount() {
         axios.get('http://localhost:8081/api/workoutplans')
             .then(response => {
-                this.setState({ data: response.data.data });
+                this.setState({ data: response.data.data,
+                    filteredData: response.data.data
+                 });
                 console.log(response.data.data);
             })
     }
@@ -27,11 +28,21 @@ class WorkoutPlansHome extends Component {
     }
 
     filterWorkoutPlans(e, area) {
-        
+        const {data} = this.state;
+        const result = data.filter(data => data.area.includes(area));
+        if(result.length > 0) {
+            this.setState({filteredData:result});
+        } else {
+            this.setState({filteredData:data});
+        }
+
     }
 
+
     render() {
+        const {data, filteredData} = this.state;
         return (
+            
             <div className="wpUserHome">
                 <UserNavBar></UserNavBar>
                 
@@ -42,27 +53,29 @@ class WorkoutPlansHome extends Component {
                 
                 
                 <br></br>
-                <div class="text-center">
+                <div className="text-center">
                     <div className='btn-group wpUserHome-homebackStyle'>
-                        <button type="button" className=" btn btn-secondary wpUserHome-addBut" onClick={e => this.filterWorkoutPlans(e,'Core/Abs')}>
+                        <button type="button" value="Core/Abs" className=" btn btn-secondary wpUserHome-addBut" onClick={e => this.filterWorkoutPlans(e,e.target.value)}>
                             Core Exercises
                         </button>
-                        <button type="button" className=" btn btn-secondary wpUserHome-addBut"onClick={e => this.filterWorkoutPlans(e,'Chest')}>Chest Exercises</button>
-                        <button type="button" className=" btn btn-secondary wpUserHome-addBut"onClick={e => this.filterWorkoutPlans(e,'Leg')}>Leg Exercises</button>
-                        <button type="button" className=" btn btn-secondary wpUserHome-addBut"onClick={e => this.filterWorkoutPlans(e,'Back')}>Back Exercises</button>
-                        <button type="button" className=" btn btn-secondary wpUserHome-addBut"onClick={e => this.filterWorkoutPlans(e,'Arm')}>Arm Exercises</button>
+                        <button type="button" value="Chest" className=" btn btn-secondary wpUserHome-addBut"onClick={e => this.filterWorkoutPlans(e,e.target.value)}>Chest Exercises</button>
+                        <button type="button" value="Leg" className=" btn btn-secondary wpUserHome-addBut"onClick={e => this.filterWorkoutPlans(e,e.target.value)}>Leg Exercises</button>
+                        <button type="button" value="Back" className=" btn btn-secondary wpUserHome-addBut"onClick={e => this.filterWorkoutPlans(e,e.target.value)}>Back Exercises</button>
+                        <button type="button" value="Arm" className=" btn btn-secondary wpUserHome-addBut"onClick={e => this.filterWorkoutPlans(e,e.target.value)}>Arm Exercises</button>
                     </div>
                 </div>
                 <br></br>
-                <div className="wpUserHome-row">
-                    {this.state.data.map(data => (
-                        <div className="col-md-4 animated fadeIn" key={data.id}>
+                <div className="row">
+                    {filteredData.map(data => (
+                        <div className="col-md-4 animated fadeIn" key={data._id}>
                             <div className="wpUserHome-card" onClick={e => this.navigateWorkoutPlan(e, data._id)}>
                                 <div className="wpUserHome-card-body">
                                     <div className="wpUserHome-avatar">
                                         <img
                                             src={`http://localhost:8081/${data.imgUrl}`}
-                                            alt =""
+                                            alt ="Workout Plan"
+                                            height="400"
+                                            width="200"
                                             className="card-img-top"
                                         />
                                     </div>

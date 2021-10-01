@@ -9,7 +9,7 @@ import CreateBlogPost from "./component/BlogPost/admin/createBlogPost";
 import BlogsList from "./component/BlogPost/admin/blogsList";
 import ViewAllBlogs from './component/BlogPost/user/viewAllBlogs';
 import ViewBlogPost from "./component/BlogPost/user/viewBlogpost";
-import ViewABlog from './component/BlogPost/admin/viewablog';
+import ViewBlogAdmin from './component/BlogPost/admin/viewblogadmin';
 import EditBlog from './component/BlogPost/admin/editBlog';
 import BlogReport from './component/BlogPost/admin/blogpostReport';
 
@@ -62,12 +62,11 @@ function App() {
         
           <Route path="/blogpost/create" component={CreateBlogPost}></Route>
           <Route path="/adminbloglist" component={BlogsList}></Route>
-          <Route path="/adminviewblog/:id" component={ViewABlog}></Route>
+          <Route path="/adminviewblog/:id" component={ViewBlogAdmin}></Route>
           <Route path="/viewallblogs" component={ViewAllBlogs}></Route>
           <Route path="/editblog/:id" component={EditBlog}></Route>
-          <Route path="/blog/report" component={BlogReport}></Route>          
+          <Route path="/blog/report" component={BlogReport}></Route>
           <Route path="/blog/:id" component={ViewBlogPost}></Route>
-
 
           <Route path="/instructor/add" component={InstructorAdd}></Route>
           <Route path="/instructor" component={HomeInstructor}></Route>
@@ -86,12 +85,8 @@ function App() {
           <Route path="/workoutplanReport" component={WorkoutPlanPayments}></Route>
           <Route path="/workoutplanpay" component={UserWorkoutPlanPayment}></Route>
 
-          
-          {/* <Route path="/commentp" component={CommentPanel}></Route> */}
 
           <Route path="/adminlogin" component={LoginPage}></Route>
-        
-          
 
         </Switch>
       </Router>

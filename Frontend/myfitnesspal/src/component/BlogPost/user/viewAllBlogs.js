@@ -106,22 +106,22 @@ class ViewAllBlogs extends Component {
           <br />
           {/* search bar */}
 
-          
-            <input
-              class="form-control me-2 searchbar"
-              type="search"
-              value={this.state.search}
-              onChange={this.handleSearch}
-              placeholder="Search Blog"
-              aria-label="Search"
-            />
-          
+          <input
+            class="form-control me-2 searchbar"
+            type="search"
+            value={this.state.search}
+            onChange={this.handleSearch}
+            placeholder="Search Blog"
+            aria-label="Search"
+          />
+
           <br />
 
           <div className="card mb-3">
-            {filteredBlogs.map((blogpost) => {
-              return this.renderBlogs(blogpost);
-            })}
+            
+              {filteredBlogs.map((blogpost) => {
+                return this.renderBlogs(blogpost);
+              })}
 
             {/* {this.state.blogs.map((blogpost) => {
               return this.renderBlogs(blogpost);

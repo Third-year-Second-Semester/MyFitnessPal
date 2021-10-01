@@ -9,7 +9,7 @@ import { confirmAlert } from 'react-confirm-alert';
    title: "",
    bodyContent: "",
    date: Date.now(),
-   image: ""
+   image: "",
  };
   
 class CreateBlogPost extends Component {

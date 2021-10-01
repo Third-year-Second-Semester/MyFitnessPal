@@ -71,7 +71,9 @@ class WorkoutPlanDetail extends Component {
                             <p>Level : {this.state.level}</p>
                             <br/>
                             <p>Price : Rs. {this.state.price}.00</p>
-                            <button className="wpUserHome-addBut" onClick={e => this.navigateToPayment(e, this.state.id)}>BUY NOW</button>
+                            <Link to={{pathname :"/workoutplanpay", state:this.state}}>
+                            <button className="wpUserHome-addBut">BUY NOW</button>
+                            </Link>
                             <button className="wpUserHome-addBut">LEARN MORE</button>
                         </div>
                     </div>

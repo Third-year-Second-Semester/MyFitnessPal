@@ -63,7 +63,10 @@ class ManageWorkoutPlans extends Component {
                 <br></br>
                 <div className='wp-homebackStyle'>
                     <Link to="/workoutplan/add">
-                        <button className="wp-addBut">+ Add New Workout Plan</button>
+                        <button className="wp-addBut">+ Add Workout Plan</button>
+                    </Link>
+                    <Link to="/workoutplanReport">
+                        <button className="wp-repBut">Payment Report</button>
                     </Link>
                 </div>
                 <br></br>

@@ -34,6 +34,8 @@ import EditWorkoutPlan from "./component/WorkoutPlan/editWorkoutPlan.component";
 import UserWorkoutPlansHome from './component/WorkoutPlan/User/workoutplanhome.component';
 import UserWorkoutPlanDetails from './component/WorkoutPlan/User/workoutPlanDetail.component';
 import WorkoutPlanPayments from './component/WorkoutPlan/wpPayments.component';
+import UserWorkoutPlanPayment from './component/WorkoutPlan/User/wpPayment.component';
+
 import ListMealPlans from "./component/MealPlan/listAllMealPlans.component";
 
 
@@ -82,6 +84,8 @@ function App() {
           <Route path="/viewworkoutplans" component={UserWorkoutPlansHome}></Route>
           <Route path="/detailedworkoutplan/:id" component={UserWorkoutPlanDetails}></Route>
           <Route path="/workoutplanReport" component={WorkoutPlanPayments}></Route>
+          <Route path="/workoutplanpay" component={UserWorkoutPlanPayment}></Route>
+
           
           {/* <Route path="/commentp" component={CommentPanel}></Route> */}
 

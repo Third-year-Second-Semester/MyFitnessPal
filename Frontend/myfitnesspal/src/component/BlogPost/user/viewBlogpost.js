@@ -20,7 +20,7 @@ class ViewBlogPost extends Component {
       email: "",
       comment: "",
       posteddate: "",
-      alertMsg: ""
+      alertMsg: "",
     };
   }
 
@@ -57,44 +57,40 @@ class ViewBlogPost extends Component {
       )
       .then((response) => {
         this.setState({ comments: response.data.data });
-        
       });
-    
   }
 
   //===================================================================================================================
   commentSubmit = (e) => {
     e.preventDefault();
 
-      let newComment = {
-        blogid: this.props.match.params.id,
-        username: this.state.username,
-        email: this.state.email,
-        comment: this.state.comment,
-        posteddate: Date.now(),
-      };
+    let newComment = {
+      blogid: this.props.match.params.id,
+      username: this.state.username,
+      email: this.state.email,
+      comment: this.state.comment,
+      posteddate: Date.now(),
+    };
 
-      axios
-        .post("http://localhost:8084/blogposts/save", newComment)
-        .then((response) => {
-          console.log("data  "+response.data);
-          if (response.data == null) {
-            this.setState({ alertMsg: "Username is already existing" });
-          } else {
-            this.setState({alertMsg: "Comment is posted!!"})
-          }
-          
-        })
-        .catch(err => {
-          alert("error = "+err);
-        });
+    axios
+      .post("http://localhost:8084/blogposts/save", newComment)
+      .then((response) => {
+        console.log("data  " + response.data);
+        if (response.data == null) {
+          this.setState({ alertMsg: "Username is already existing" });
+        } else {
+          this.setState({ alertMsg: "Comment is posted!!" });
+        }
+      })
+      .catch((err) => {
+        alert("error = " + err);
+      });
 
     // if (this.state.allComments.username != this.state.username) {
-      
+
     // } else {
     //   alert("This username has been used already!!");
     // }
-
   };
   //=========================================================================================================================
 

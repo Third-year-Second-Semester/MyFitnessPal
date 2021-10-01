@@ -1,5 +1,6 @@
 const express =  require('express')
 const WorkOutPlanModel = require('../models/workoutPlan.model')
+const WorkOutPlanPaymentModel = require('../models/workoutPlanPayment.model')
 
 //creating a workout plan
 const createWorkOutPlan = async function(req,res){
@@ -12,7 +13,7 @@ const createWorkOutPlan = async function(req,res){
         const detailedDescription = req.body.detailedDescription;
         const imgUrl = req.file.path;
 
-        const newBlogpost = {
+        const newPlan = {
         name,
         area,
         level,
@@ -21,7 +22,7 @@ const createWorkOutPlan = async function(req,res){
         detailedDescription,
         imgUrl
         };
-        const workOutPlan =  WorkOutPlanModel(newBlogpost);
+        const workOutPlan =  WorkOutPlanModel(newPlan);
         try{
             let plans = await workOutPlan.save();
             res.status(200).send({result:plans})
@@ -84,10 +85,57 @@ const deleteWorkoutPlan = async (req, res) => {
     }
 }
 
+//workout plan payment
+const payWorkOutPlan = async function(req,res){
+    if(req.body){
+        const firstName = req.body.firstName;
+        const lastName = req.body.lastName;
+        const email = req.body.email;
+        const mobile = req.body.mobile;
+        const plan = req.body.plan;
+        const price = req.body.price;
+        const cardNo = req.body.cardNo;
+        const expDate = req.body.expDate;
+        const cvv = req.body.cvv;
+
+        const newPayment = {
+        firstName,
+        lastName,
+        email,
+        mobile,
+        plan,
+        price,
+        cardNo,
+        expDate,
+        cvv
+        };
+        const workOutPlan =  WorkOutPlanPaymentModel(newPayment);
+        try{
+            let plans = await workOutPlan.save();
+            res.status(200).send({result:plans})
+        }catch(err){
+            res.status(500).send({error:err.message})
+        }
+    }
+}
+
+//retrieve all workout plan payments
+const getAlLWorkoutPlanPayments = async (req, res) => {
+    await WorkOutPlanPaymentModel.find({})
+        .then(data => {
+            res.status(200).send({ data: data });
+        })
+        .catch(error => {
+            res.status(500).send({ error: error.message });
+        });
+}
+
 module.exports = {
     createWorkOutPlan,
     updateWorkOutPlan,
     getAlLWorkoutPlans,
     getWorkoutPlan,
-    deleteWorkoutPlan
+    deleteWorkoutPlan,
+    payWorkOutPlan,
+    getAlLWorkoutPlanPayments
 };

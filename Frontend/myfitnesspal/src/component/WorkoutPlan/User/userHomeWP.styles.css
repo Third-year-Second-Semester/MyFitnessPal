@@ -1,48 +1,70 @@
-.wp-homebackStyle
+.wpUserHome
+{
+    font-family: 'Arvo',sans-serif;
+}
+
+.wpUserHome-homebackStyle
 {
 	text-align: center;
 }
 
-.pagetitle{
+.wpUserHome-heading{
+    background-image:url('../../../images/wpHome.jpg');
+    background-size: cover;
+    overflow: hidden;
+    background-size: 100%;
+    height: 350px;
+    text-align: center;
+    margin:auto;
+  }
+
+.wpUserHome-pagetitle{
   text-align: center;
+  color: #ffffff;
+  vertical-align: middle;
+  line-height: 350px;
+  font-size: 80px;
 }
 
-.wp-addBut
+.wpUserHome-addBut
 {
-	width:220px;
-	padding:12px;
-	border-radius:5px;
-	outline: 10px;
-	background-color:#00be0a;
-	border:1px solid rgb(223, 238, 14);
-	color:#ffffff;
-	font-size:20px;
-	cursor: pointer;
+	font-size: 20px;
+    border: 2px solid black;
+    vertical-align: middle;
+    text-align: center;
+    width: 190px;
+    /* height: 50px; */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin: 5px;
+    border-radius: 8px;
 }
 
-.wp-addBut:hover
+.wpUserHome-addBut:hover
 {
-	background-color:#0e9e0e;
-	width:220px;
+	background-color:#686b68;
+	text-decoration: solid;
+    color: #ffffff;
+    cursor: pointer;
 }
 
-.wp-repBut
+.repBut
 {
 	width:250px;
 	padding:12px;
     margin-left: 50px;
 	border-radius:5px;
 	outline: 10px;
-	background-color:#504e4d;
-	border:1px solid rgb(161, 155, 154);
+	background-color:#f38404;
+	border:1px solid rgb(207, 32, 8);
 	color:#ffffff;
 	font-size:20px;
 	cursor: pointer;
 }
 
-.wp-repBut:hover
+.repBut:hover
 {
-	background-color:#7a7775;
+	background-color:#ce580a;
 	width:250px;
 }
 
@@ -88,36 +110,36 @@
     margin-bottom: 30px;
   }
   
-  .wp-card {
+  .wpUserHome-card {
     padding: 20px;
     border: solid 1px rgba(0, 0, 0, 0.08);
     text-align: center;
     
   }
-  .wp-card:hover {
+  .wpUserHome-card:hover {
     box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.08);
   }
-  .wp-card-title {
+  .wpUserHome-card-title {
     margin-top: 10px;
   }
   .card-text {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
   }
-  .wp-card-text .fa {
+  .wpUserHome-card-text .fa {
     font-size: 26px;
   }
-  .wp-avatar {
+  .wpUserHome-avatar {
     width: 100%;
     height: auto;
     margin: auto;
   }
 
 
-  .wp-avatar img {
+  .wpUserHome-avatar img {
     border: solid 6px transparent;
   }
-  .wp-card:hover .wp-avatar img {
+  .wpUserHome-card:hover .wpUserHome-avatar img {
     opacity: 0.3;
   }
   

@@ -1,0 +1,62 @@
+.instListItemContainer{
+    
+    margin-top: 4%;
+    width: 100%;
+    border: 2px solid rgb(8, 15, 8);
+    border-radius: 8px;
+    padding: 25px;
+
+}
+
+.instListImgHolder{
+    height: 200px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.ilistTitle{
+    margin-top: 4%;
+    font-weight: bold;
+}
+
+.iItemDesc p{
+    width: 400px;
+    margin-top: 4%;
+    font-size:18px;
+}
+
+.iredmoreLink{
+    font-style: italic;
+    text-decoration: underline;
+    margin-bottom: 12px;
+}
+
+.ilistMealMain{
+    font-family: Arvo;
+}
+
+.iformTitle{
+    margin-top: 1%;
+    text-align: center;
+}
+
+.moreBut
+{
+	width:110px;
+	padding:5px;
+	border-radius:5px;
+	outline: 10px;
+	background-color:#f5f5f515;
+	border:2px solid rgb(0, 0, 0);
+	color:#000000;
+	font-size:16px;
+    font-weight: normal;
+	cursor: pointer;
+}
+
+.moreBut:hover
+{
+	background-color:#c5c5c54d;
+    text-decoration: underline;
+	width:110px;
+}

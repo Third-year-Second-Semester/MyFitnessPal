@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { Table } from 'react-bootstrap';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import './instructorReport.css';
+import './paymentReport.styles.css';
 import axios from 'axios';
-import NavBar from '../../NavBar/Navbar.component';
+import NavBar from '../NavBar/Navbar.component';
 
 
 
-class InstructorReport extends Component {
+class WorkoutPlanReport extends Component {
 
     constructor(props) {
         super(props);
@@ -19,7 +19,7 @@ class InstructorReport extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8081/instructor/')
+        axios.get('http://localhost:8081//workoutplans/pay')
             .then(response => {
                 this.setState({ data: response.data.data });
                 console.log(response.data.data);
@@ -28,13 +28,13 @@ class InstructorReport extends Component {
 
     
 
-    //Instructor Report
+    //Payments for workout plan Report
     generatepdf = () => {
         const doc = new jsPDF()
        // this.fetchdata()
-        doc.text("Instructor Details Report", 20, 10)
-        doc.autoTable({ html: '#my-table' })
-        doc.save('instructor_Report.pdf')
+        doc.text("Workout Plan Payments Report", 50, 10)
+        doc.autoTable({ html: '#workoutplan-table' })
+        doc.save('WorkoutPlanPaymentReport.pdf')
        
     }
 
@@ -46,27 +46,35 @@ class InstructorReport extends Component {
                 <div id="content">
                     <br></br>
                     <center>
-                    <h2>Instructor Details Report</h2>
+                    <h2>Workout Plan Payments Report</h2>
                     </center>
                     <br></br>
 
 
 
-                    <Table striped bordered hover id="my-table" >
+                    <Table striped bordered hover id="workoutplan-table" varian="dark" >
                         <thead>
                             <tr>
-                                <th >Instructor Name</th>
+                                <th >First Name</th>
+                                <th >Last Name</th>
                                 <th >Email</th>
-                                <th >Category</th>
+                                <th >Mobile No.</th>
+                                <th >Workout Plan</th>
+                                <th >Price</th>
+                                <th >Payment Date</th>
                             </tr>
                         </thead>
                         <tbody>
                             {this.state.data.map(data => (
 
                                 <tr key={data.id}>
-                                    <td >{data.name}</td>
+                                    <td >{data.firstName}</td>
+                                    <td >{data.lastName}</td>
                                     <td >{data.email}</td>
-                                    <td >{data.category}</td>
+                                    <td >{data.mobile}</td>
+                                    <td >{data.plan}</td>
+                                    <td >{data.price}</td>
+                                    <td >{data.date}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -77,11 +85,11 @@ class InstructorReport extends Component {
 
                 </div>
                 <br></br>
-                <button id="repoBut" onClick={this.generatepdf} type="primary">Download Report PDF</button>
+                <button id="generateBut" onClick={this.generatepdf} type="primary">Download Report PDF</button>
             </div>
 
         )
     }
 }
 
-export default InstructorReport;
+export default WorkoutPlanReport;

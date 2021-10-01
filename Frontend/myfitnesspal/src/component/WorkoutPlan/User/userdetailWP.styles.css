@@ -1,0 +1,19 @@
+.wpUserDetail
+{
+    font-family: 'Arvo',sans-serif;
+}
+
+.wpimageHolder{
+    width: 400px;
+    height: 550px;
+    border-radius: 8px;
+   
+}
+
+.wpImage{
+    max-height: 495px;
+    min-width: 300px;
+    max-width: 400px;
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 8px;
+}

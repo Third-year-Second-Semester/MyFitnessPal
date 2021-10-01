@@ -27,6 +27,8 @@ router.route("/mealplans").get(mealPlanController.getAllMealPlans)
 router.route("/mealplans/:id").get(mealPlanController.getMealPlanById)
 router.route("/mealplans/:id").delete(mealPlanController.deleteMealPlanById)
 router.route("/mealplans/:id").put(mealPlanController.updateMealPlanById)
+router.route("/mealregistrations").get(mealPlanController.getAllMealRegistrations)
+router.route("/mealplans/reg").post(mealPlanController.registerForMealPlan)
 
 
 
@@ -55,6 +57,8 @@ router.route("/workoutplans").get(workoutPlanController.getAlLWorkoutPlans)
 router.route("/workoutplans/:id").get(workoutPlanController.getWorkoutPlan)
 router.route("/workoutplans/:id").put(workoutPlanController.updateWorkOutPlan)
 router.route("/workoutplans/:id").delete(workoutPlanController.deleteWorkoutPlan)
+router.route("/workoutplans/pay").post(workoutPlanController.payWorkOutPlan)
+router.route("/workoutplans/pay").get(workoutPlanController.getAlLWorkoutPlanPayments)
 
 
 

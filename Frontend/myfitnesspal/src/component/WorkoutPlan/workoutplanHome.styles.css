@@ -26,23 +26,23 @@
 	width:220px;
 }
 
-.repBut
+.wp-repBut
 {
 	width:250px;
 	padding:12px;
     margin-left: 50px;
 	border-radius:5px;
 	outline: 10px;
-	background-color:#f38404;
-	border:1px solid rgb(207, 32, 8);
+	background-color:#504e4d;
+	border:1px solid rgb(161, 155, 154);
 	color:#ffffff;
 	font-size:20px;
 	cursor: pointer;
 }
 
-.repBut:hover
+.wp-repBut:hover
 {
-	background-color:#ce580a;
+	background-color:#7a7775;
 	width:250px;
 }
 

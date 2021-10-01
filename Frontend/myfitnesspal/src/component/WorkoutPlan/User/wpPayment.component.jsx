@@ -1,70 +1,175 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link , useLocation} from "react-router-dom";
 import UserNavBar from '../../UserNavBar/UserNavBar';
 import axios from 'axios';
+import './userPayment.styles.css';
 
+const WorkoutPlanPayment =(props)=> {
 
-const initialState = {
-    name: "",
-    level: "",
-    area: "",
-    description: "",
-    detailedDescription: "",
-    price: "",
-    imgUrl: ""
-}
-
-class WorkoutPlanPayment extends Component {
-    constructor() {
-        super();
+    
+    const initialState = {
+        firstName:"",
+        lastName:"",
+        email:"",
+        mobile:"",
+        plan: "",
+        price: "",
+        cardNo:"",
+        expDate:"",
+        cvv:""
     }
-    render() {
-        const {state} = this.props.location;
+    const [state, setState] = useState(initialState);
+    const location = useLocation();
+    console.log(location);
+
+    const onChange =(e) => {
+        setState({ [e.target.name]: e.target.value })
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const workoutPlanPay = new FormData();
+        
+        workoutPlanPay.append('firstName', state.firstName);
+        workoutPlanPay.append('lastName', state.lastName);
+        workoutPlanPay.append('email', state.email);
+        workoutPlanPay.append('mobile', state.mobile);
+        workoutPlanPay.append('plan', location.state.name);
+        workoutPlanPay.append('price', location.state.price);
+        workoutPlanPay.append('cardNo', state.cardNo);
+        workoutPlanPay.append('expDate', state.expDate);
+        workoutPlanPay.append('cvv', state.cvv);
+
+        axios.post('http://localhost:8081/api/workoutplan/pay', workoutPlanPay,
+            {
+                headers: { 'Content-Type':  'multipart/form-data' }
+            }
+        )
+            .then(response => {
+                alert('Data Succesfully inserted');
+                this.setState({
+                    firstName:"",
+                    lastName:"",
+                    email:"",
+                    mobile:"",
+                    plan: "",
+                    price: "",
+                    cardNo:"",
+                    expDate:"",
+                    cvv:""
+                  });
+                  window.location = `/viewworkoutplans`
+
+            })
+            .catch(error => {
+                console.log(error.message);
+                alert(error.message);
+            })
+    }
+
+    
         return(
-            <div>
-                <form >
-                    <div className="form-row">
-                        <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="First Name"/>
-                        </div>
-                        <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name"/>
-                        </div>
+            <div className="wpUserPayment">
+                <UserNavBar></UserNavBar>
+            <div className="justify-content-center">
+                <div className="container">
+                <div className="row">
+                <form className="row g-3" onSubmit={onSubmit}>
+                    <h1 className="wp-pay-title">Purchase Your Workout Plan Now!</h1>
+                    <div class="col-md-6">
+                        <input 
+                            type="text" 
+                            class="form-control wpinput1" 
+                            id="inputEmail4" 
+                            placeholder="First Name"
+                            onChange={onChange}
+                            />
                     </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="inputAddress" placeholder="Email"/>
+                    <div class="col-md-6">
+                        <input 
+                            type="text" 
+                            class="form-control wpinput1" 
+                            id="inputPassword4" 
+                            placeholder="Last Name"
+                            onChange={onChange}
+                            />
                     </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control" id="inputAddress2" placeholder="Mobile Number"/>
+                    <div class="col-12">
+                        <input 
+                            type="text" 
+                            class="form-control wpinput2" 
+                            id="inputAddress" 
+                            placeholder="Email"
+                            onChange={onChange}
+                            />
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="basic-url" class="form-label">Workout Plan</label>
-                            <label for="basic-url" class="form-label">{state.name}</label>
+                    <div class="col-12">
+                        <input 
+                            type="text" 
+                            class="form-control wpinput2" 
+                            id="inputAddress2" 
+                            placeholder="Mobile Number"
+                            onChange={onChange}
+                            />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="basic-url" class="form-label">Workout Plan</label><br/>
+                        <input 
+                            type="text" 
+                            class="form-control wpinput1" 
+                            id="inputEmail4" 
+                            value={location.state.name} 
+                            disabled/>
+                    </div>
+                        <div class="col-md-6">
+                            <label for="basic-url" class="form-label">Price</label><br/>
+                            <input 
+                                type="text" 
+                                class="form-control wpinput1" 
+                                id="inputEmail4" 
+                                value={location.state.price} 
+                                disabled/>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="basic-url" class="form-label">Price</label>
-                            <label for="basic-url" class="form-label">{state.price}</label>
-                        </div>
+                    <div class="col-12">
+                        <input 
+                            type="text" 
+                            class="form-control wpinput2" 
+                            id="inputAddress2" 
+                            placeholder="Card Number"
+                            onChange={onChange}/>
                     </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control" id="inputAddress2" placeholder="Card Number"/>
+                    <div class="col-md-6">
+                        <input 
+                            type="text" 
+                            class="form-control wpinput1" 
+                            id="inputEmail4" 
+                            placeholder="Exp. Date"
+                            onChange={onChange}/>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Exp. Date"/>
-                        </div>
-                        <div class="form-group col-md-6">
-                        <input type="number" class="form-control" id="inputPassword4" placeholder="CVV"/>
-                        </div>
+                    <div class="col-md-6">
+                        <input 
+                            type="text" 
+                            class="form-control wpinput1" 
+                            id="inputPassword4" 
+                            placeholder="CVV"
+                            onChange={onChange}/>
                     </div>
-                    <button type="submit" class="btn btn-primary">Pay Now</button>
-                    <button type="button" class="btn btn-primary">Cancel</button>
+                    <br/>
+                    <br/>
+                    <div className="text-center">
+                        <button type="submit" class="btn btn-primary wpbtn">Pay Now</button>
+                        <Link to='/viewworkoutplans'>
+                        <button type="button" class="btn btn-danger wpbtn">Cancel</button>
+                        </Link>
+                    </div>
                     </form>
+                    </div>
+                    </div>
+                </div>
             </div>
         )
 
-    }
+    
 }
 
 export default WorkoutPlanPayment;

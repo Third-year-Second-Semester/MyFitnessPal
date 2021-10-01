@@ -4,10 +4,10 @@ const workoutPlanPaymentSchema = mongoose.Schema({
     firstName:  String, 
     lastName:  String, 
     email: String,
-    mobile: Number,
+    mobile: String,
     plan: String,
-    price: Number,
-    cardNo: Number,
+    price: String,
+    cardNo: String,
     expDate:  String,
     cvv: String,
     date: { type: Date, default: Date.now }

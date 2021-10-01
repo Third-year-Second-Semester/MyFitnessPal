@@ -1,5 +1,4 @@
 const mongoose = require("mongoose")
-const{Schema} = mongoose
 
 const workoutPlanSchema = mongoose.Schema({
     name:  String, 

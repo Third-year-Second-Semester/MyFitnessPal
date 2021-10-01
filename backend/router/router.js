@@ -57,6 +57,8 @@ router.route("/workoutplans").get(workoutPlanController.getAlLWorkoutPlans)
 router.route("/workoutplans/:id").get(workoutPlanController.getWorkoutPlan)
 router.route("/workoutplans/:id").put(workoutPlanController.updateWorkOutPlan)
 router.route("/workoutplans/:id").delete(workoutPlanController.deleteWorkoutPlan)
+router.route("/workoutplans/pay").post(workoutPlanController.payWorkOutPlan)
+router.route("/workoutplans/pay").get(workoutPlanController.getAlLWorkoutPlanPayments)
 
 
 

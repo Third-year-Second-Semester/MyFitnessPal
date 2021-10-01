@@ -1,0 +1,39 @@
+.wpUserPayment-container{
+    margin-top: 10px;
+    background-color: white;
+    height: max-content;
+    border-radius: 8px;
+    border: 1px solid #D1D1D1 ;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.wpinput2{
+    height: 45px;
+    border:#ACACAC 1px solid ;
+    padding-left: 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-top: 25px;
+    border-radius: 8px;
+    /* width:325px ; */
+}
+
+.wp-pay-title{
+    text-align: center;
+}
+
+.wpUserPayment-container{
+    width: 560px;
+    text-align: center;
+}
+
+.wpbtn{
+    width: 25%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin: 5px;
+    text-align: center;
+}

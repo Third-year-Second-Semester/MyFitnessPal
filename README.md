@@ -1,5 +1,26 @@
+#2021S2_REG_WE_32
+
 # MyFitnessPal
+
+##Group Details
+Member details:
+
+| Name                 | Student Id    | Username            |
+| -------------------- |:-------------:| -------------------:|
+| Tharindu Balasooriya | IT18408584    | TharinduBalasooriya |
+| Kavishka Kolamunna   | IT19156248    | kavishka721         |
+| Dinuja Pinto         | IT19016894    | Dinuja-Spinto       |
+| Kulanika Gnanarathna | IT19091044    | kulvinu             |
+
+##Project Description
+
 MyFitnessPal is a physical fitness web app which acts as a virtual trainer and nutritionist to ensure that the everyone stays fit. With a wide range of workouts to choose from and a multitude of instructors to work with, the app lets you tackle those tyres of fat in the boundaries of your home. Workouts not enough for you? We have you covered! Users can subscribe to different meal plans to opt for healthier calory intake. Want to be up to date with the fitness world? Checkout our informative blog posts with enlightening content.
+
+## Technologies
+ * React JS
+ * Express JS
+ * Node JS
+ * Mongo DB
 
 ## Usage
 
@@ -19,17 +40,3 @@ To run the project, run:
   * cd [folder path]/MyFitnessPal/backend and run npm start to start the backend 
   * cd [folder path]/MyFitnessPal/Frontend/myfitnesspal and run npm start to start the frontend
 
-## Contributors
- * Tharindu Balasooriya
- * Kavishka Kolamunna
- * Dinuja Pinto
- * Kulanika Gnanarathna
-
-## Technology
- * React JS
- * Express JS
- * Node JS
- * Mongo DB
-
-## Support
-Give :star2: to this repository if it helped you!
